@@ -399,3 +399,8 @@ ul,ol{padding:0;list-style:none}
   .mobile-cta .btn{flex:1;min-height:46px;font-size:16px;padding:0 12px}
   .wa-float{bottom:calc(78px + 12px + env(safe-area-inset-bottom));width:52px;height:52px}
 }
+
+/* ---------- selector de idioma ---------- */
+.lang{font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--muted-2)!important;text-decoration:none;border:1px solid rgba(255,255,255,.28);border-radius:6px;padding:4px 8px}
+.lang:hover{color:var(--white)!important;border-color:var(--white)}
+@media (max-width:979px){.nav .lang{align-self:flex-start;margin-top:12px;padding:6px 10px;border-bottom:1px solid rgba(255,255,255,.28)}}

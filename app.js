@@ -1,21 +1,27 @@
 /* =====================================================================
    Allgood · app.js
    Sin dependencias. Todo lo que hay que rellenar está en CONFIG.
+   La página en catalán (ca/index.html) usa este mismo archivo: el idioma
+   se detecta por el atributo lang del documento.
    ===================================================================== */
 'use strict';
 
 /* ---------- 1. DATOS DE CONTACTO Y PRECIO (rellenar aquí) ---------- */
 const CONFIG = {
-  whatsapp: '',   // Número con prefijo, sin + ni espacios. Ej.: '34600000000'
-  telefono: '',   // Cómo quieres que se vea. Ej.: '600 00 00 00'
-  email: '',      // Ej.: 'hola@casaapunto.es'
+  whatsapp: '',         // Número con prefijo, sin + ni espacios. Ej.: '34600000000'
+  telefono: '',         // Cómo quieres que se vea. Ej.: '600 00 00 00'
+  email: '',            // Ej.: 'hola@allgood.care'
   precio: '',           // Puesta a punto. Solo el número. Ej.: '390'
   precioAlta: '',       // Alta segura. Ej.: '490'
   cuotaReferente: ''    // Cuota mensual de la referente. Ej.: '69'
 };
 
-/* ---------- 2. CONTENIDO ---------- */
-const ROOMS = {
+/* ---------- 2. IDIOMA ---------- */
+const LANG = (document.documentElement.lang || 'es').slice(0, 2);
+const CA = LANG === 'ca';
+
+/* ---------- 3. CONTENIDO ---------- */
+const ROOMS_ES = {
   dormitorio: {
     name: 'Dormitorio', tag: 'Calor · Medicación',
     risks: [
@@ -48,13 +54,13 @@ const ROOMS = {
     risks: [
       'Suelo mojado y bañera alta: uno de los sitios con más caídas.',
       'Nada firme a lo que agarrarse al sentarse o levantarse.',
-      'El agua del termo sale demasiado caliente.'
+      'El agua de la ducha sale demasiado caliente.'
     ],
     fixes: [
       'Asideros junto al inodoro y en la ducha',
       'Antideslizante dentro y fuera de la ducha',
       'Luz nocturna para ir sin encender nada',
-      'Termo ajustado a una temperatura segura'
+      'Agua de la ducha a temperatura segura, con limitador si hace falta'
     ]
   },
   salon: {
@@ -65,9 +71,9 @@ const ROOMS = {
       'Sillones muy bajos y alfombras grandes.'
     ],
     fixes: [
-      'Móvil configurado para silenciar números desconocidos',
       'Palabra clave familiar para comprobar cualquier llamada',
-      'Teléfonos importantes a la vista',
+      'Teléfonos de confianza guardados con nombre y a la vista',
+      'Sillón a la altura correcta para levantarse sin impulso',
       'Alfombra fijada y paso libre'
     ]
   },
@@ -99,35 +105,164 @@ const ROOMS = {
   }
 };
 
-// Peso de cada pregunta y lo primero que revisaríamos si la respuesta es «sí».
-const QUESTIONS = [
-  { id: 'q1', w: 2, fix: 'Un plan de aviso: quién llama a quién si algo va mal' },
-  { id: 'q2', w: 3, fix: 'Revisión completa del riesgo de caídas, habitación por habitación' },
-  { id: 'q9', w: 3, fix: 'Medir la marcha y el equilibrio en la visita, y pautar ejercicio de equilibrio' },
-  { id: 'q10', w: 2, fix: 'Apoyos donde le dan miedo las caídas y un plan para recuperar confianza' },
-  { id: 'q3', w: 2, fix: 'Asideros y antideslizante en el baño' },
-  { id: 'q4', w: 2, fix: 'Luces con sensor del dormitorio al baño' },
-  { id: 'q5', w: 2, fix: 'Detector de humo instalado y probado' },
-  { id: 'q6', w: 2, fix: 'Una habitación preparada para las olas de calor' },
-  { id: 'q7', w: 2, fix: 'Pastillero semanal y lista de medicación al día' },
-  { id: 'q8', w: 1, fix: 'Móvil protegido y palabra clave familiar' }
-];
-
-const LEVELS = {
-  bajo:  'Buen punto de partida. Una revisión al año confirma que sigue así y se adelanta a los cambios.',
-  medio: 'Hay cosas concretas que mejorar antes de que pase algo. Una revisión las deja resueltas.',
-  alto:  'Hay varios puntos que conviene arreglar ya. La buena noticia: casi todos se resuelven en una sola visita.'
+const ROOMS_CA = {
+  dormitorio: {
+    name: 'Dormitori', tag: 'Calor · Medicació',
+    risks: [
+      'A l’estiu l’habitació passa dels 30 ºC a la nit i ningú se n’adona.',
+      'S’aixeca del llit amb pressa o marejat.',
+      'Pastilles soltes a la tauleta: dosis oblidades o repetides.'
+    ],
+    fixes: [
+      'Termòmetre a la vista i un pla per a les onades de calor',
+      'Làmina o cortina tèrmica que frena el sol',
+      'Suport ferm per aixecar-se del llit',
+      'Pastiller setmanal i llista de medicació al dia'
+    ]
+  },
+  pasillo: {
+    name: 'Passadís', tag: 'Caigudes',
+    risks: [
+      'El camí al bany, de nit i a les fosques.',
+      'Catifes soltes i cables per terra.',
+      'Mobles que estrenyen el pas.'
+    ],
+    fixes: [
+      'Llums amb sensor de moviment del dormitori al bany',
+      'Catifes fixades o retirades',
+      'Cables recollits i pas lliure'
+    ]
+  },
+  bano: {
+    name: 'Bany', tag: 'Caigudes',
+    risks: [
+      'Terra mullat i banyera alta: un dels llocs amb més caigudes.',
+      'Res de ferm on agafar-se en seure o aixecar-se.',
+      'L’aigua de la dutxa surt massa calenta.'
+    ],
+    fixes: [
+      'Agafadors al costat del vàter i a la dutxa',
+      'Antilliscant dins i fora de la dutxa',
+      'Llum nocturn per anar-hi sense encendre res',
+      'Aigua de la dutxa a temperatura segura, amb limitador si cal'
+    ]
+  },
+  salon: {
+    name: 'Menjador', tag: 'Estafes',
+    risks: [
+      'Trucades del fals net amb el mòbil trencat, o del fals banc demanant claus.',
+      'Missatges amb enllaços per desbloquejar un compte.',
+      'Butaques molt baixes i catifes grans.'
+    ],
+    fixes: [
+      'Paraula clau familiar per comprovar qualsevol trucada',
+      'Telèfons de confiança desats amb nom i a la vista',
+      'Butaca a l’alçada correcta per aixecar-se sense impuls',
+      'Catifa fixada i pas lliure'
+    ]
+  },
+  cocina: {
+    name: 'Cuina', tag: 'Incendis',
+    risks: [
+      'El foc encès i oblidat.',
+      'Regletes sobrecarregades i endolls vells.',
+      'El d’ús diari desat massa amunt.'
+    ],
+    fixes: [
+      'Detector de fum instal·lat i provat',
+      'Revisió d’endolls i regletes',
+      'El d’ús diari a l’alçada de la mà, sense enfilar-se a cadires'
+    ]
+  },
+  entrada: {
+    name: 'Entrada', tag: 'Caigudes',
+    risks: [
+      'Un esglaó o una estora amb què s’entrebanca.',
+      'Poca llum en arribar a casa.',
+      'Si passa alguna cosa, ningú més pot entrar.'
+    ],
+    fixes: [
+      'Llum a l’entrada',
+      'Estora antilliscant, o fora',
+      'Caixa de clau per a emergències, si la família ho vol'
+    ]
+  }
 };
 
-/* ---------- 3. UTILIDADES ---------- */
+// Peso de cada pregunta y lo primero que revisaríamos si la respuesta es «sí».
+const QUESTIONS = [
+  { id: 'q1', w: 2, fix: 'Un plan de aviso: quién llama a quién si algo va mal', fixCa: 'Un pla d’avís: qui truca a qui si alguna cosa va malament' },
+  { id: 'q2', w: 3, fix: 'Revisión completa del riesgo de caídas, habitación por habitación', fixCa: 'Revisió completa del risc de caigudes, habitació per habitació' },
+  { id: 'q9', w: 3, fix: 'Medir la marcha y el equilibrio en la visita, y pautar ejercicio de equilibrio', fixCa: 'Mesurar la marxa i l’equilibri a la visita, i pautar exercici d’equilibri' },
+  { id: 'q10', w: 2, fix: 'Apoyos donde le dan miedo las caídas y un plan para recuperar confianza', fixCa: 'Suports on li fan por les caigudes i un pla per recuperar confiança' },
+  { id: 'q3', w: 2, fix: 'Asideros y antideslizante en el baño', fixCa: 'Agafadors i antilliscant al bany' },
+  { id: 'q4', w: 2, fix: 'Luces con sensor del dormitorio al baño', fixCa: 'Llums amb sensor del dormitori al bany' },
+  { id: 'q5', w: 2, fix: 'Detector de humo instalado y probado', fixCa: 'Detector de fum instal·lat i provat' },
+  { id: 'q6', w: 2, fix: 'Una habitación preparada para las olas de calor', fixCa: 'Una habitació preparada per a les onades de calor' },
+  { id: 'q7', w: 2, fix: 'Pastillero semanal y lista de medicación al día', fixCa: 'Pastiller setmanal i llista de medicació al dia' },
+  { id: 'q8', w: 1, fix: 'Móvil protegido y palabra clave familiar', fixCa: 'Mòbil protegit i paraula clau familiar' }
+];
+
+const TXT_ES = {
+  menuOpen: 'Abrir menú', menuClose: 'Cerrar menú',
+  levelName: { bajo: 'bajo', medio: 'medio', alto: 'alto' },
+  levelText: {
+    bajo: 'Buen punto de partida. Una revisión al año confirma que sigue así y se adelanta a los cambios.',
+    medio: 'Hay cosas concretas que mejorar antes de que pase algo. Una revisión las deja resueltas.',
+    alto: 'Hay varios puntos que conviene arreglar ya. La buena noticia: casi todos se resuelven en una sola visita.'
+  },
+  routeHigh: 'Riesgo de caída alto. En personas que ya se han caído o se sienten inestables, adaptar la casa con una terapeuta ocupacional reduce las caídas un 38 %. La visita empieza por ahí.',
+  routeLow: 'Riesgo de caída no destacado. Revisaríamos sobre todo incendios, calor y estafas, y mediríamos la marcha en la visita por si acaso.',
+  share: (level, pct, fixes, url) => `He hecho el test de Allgood (la ITV de la casa de tus padres): riesgo ${level}, ${pct} %.` + (fixes.length ? ` Lo primero que revisarían: ${fixes.slice(0, 3).join('; ')}.` : '') + ` Hazlo tú también: ${url}`,
+  sibs: (precio, parte, url) => `He visto esto para la casa de papá y mamá: la ITV de la casa. Una terapeuta ocupacional y un técnico de adaptaciones la revisan y resuelven lo pequeño en una mañana, y nos envían el informe a todos.${precio > 0 ? ` Son ${precio} €; entre tres, ${parte(3)} € cada uno.` : ''} ¿Lo pagamos entre todos? ${url}`,
+  split: (p) => `Entre hermanos: ${p(2)} € cada uno si sois dos, ${p(3)} € si sois tres, ${p(4)} € si sois cuatro.`,
+  needNamePhone: 'Necesitamos tu nombre y un teléfono para poder llamarte.',
+  bookingIntro: (nombre) => `Hola, soy ${nombre}. Quiero reservar una de las primeras revisiones de Allgood.`,
+  bookingPhone: 'Teléfono', bookingZone: 'La casa está en', bookingInterest: 'Me interesa', bookingMore: 'Más información',
+  openedWhatsapp: 'Se abre WhatsApp con tu mensaje preparado. Envíalo y te contestamos.',
+  openedMail: 'Se abre tu correo con el mensaje preparado. Envíalo y te contestamos.',
+  mailSubject: 'Reserva · Allgood',
+  missingConfig: 'Falta el contacto: rellena whatsapp o email en CONFIG (app.js).',
+  waFloat: 'Hola, quiero información sobre la revisión de la casa de mis padres.'
+};
+
+const TXT_CA = {
+  menuOpen: 'Obre el menú', menuClose: 'Tanca el menú',
+  levelName: { bajo: 'baix', medio: 'mitjà', alto: 'alt' },
+  levelText: {
+    bajo: 'Bon punt de partida. Una revisió l’any confirma que continua així i s’avança als canvis.',
+    medio: 'Hi ha coses concretes per millorar abans que passi res. Una revisió les deixa resoltes.',
+    alto: 'Hi ha diversos punts que convé arreglar ja. La bona notícia: gairebé tots es resolen en una sola visita.'
+  },
+  routeHigh: 'Risc de caiguda alt. En persones que ja han caigut o se senten inestables, adaptar la casa amb una terapeuta ocupacional redueix les caigudes un 38 %. La visita comença per aquí.',
+  routeLow: 'Risc de caiguda no destacat. Revisaríem sobretot incendis, calor i estafes, i mesuraríem la marxa a la visita per si de cas.',
+  share: (level, pct, fixes, url) => `He fet el test d’Allgood (la ITV de la casa dels teus pares): risc ${level}, ${pct} %.` + (fixes.length ? ` El primer que revisarien: ${fixes.slice(0, 3).join('; ')}.` : '') + ` Fes-lo tu també: ${url}`,
+  sibs: (precio, parte, url) => `He vist això per a la casa del pare i la mare: la ITV de la casa. Una terapeuta ocupacional i un tècnic d’adaptacions la revisen i resolen el que és petit en un matí, i ens envien l’informe a tots.${precio > 0 ? ` Són ${precio} €; entre tres, ${parte(3)} € cadascú.` : ''} Ho paguem entre tots? ${url}`,
+  split: (p) => `Entre germans: ${p(2)} € cadascú si sou dos, ${p(3)} € si sou tres, ${p(4)} € si sou quatre.`,
+  needNamePhone: 'Necessitem el teu nom i un telèfon per poder trucar-te.',
+  bookingIntro: (nombre) => `Hola, soc ${nombre}. Vull reservar una de les primeres revisions d’Allgood.`,
+  bookingPhone: 'Telèfon', bookingZone: 'La casa és a', bookingInterest: 'M’interessa', bookingMore: 'Més informació',
+  openedWhatsapp: 'S’obre WhatsApp amb el teu missatge preparat. Envia’l i et contestem.',
+  openedMail: 'S’obre el teu correu amb el missatge preparat. Envia’l i et contestem.',
+  mailSubject: 'Reserva · Allgood',
+  missingConfig: 'Falta el contacte: omple whatsapp o email a CONFIG (app.js).',
+  waFloat: 'Hola, vull informació sobre la revisió de la casa dels meus pares.'
+};
+
+const TXT = CA ? TXT_CA : TXT_ES;
+const ROOMS = CA ? ROOMS_CA : ROOMS_ES;
+const fixOf = (q) => (CA ? q.fixCa : q.fix);
+
+/* ---------- 4. UTILIDADES ---------- */
 const $  = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isNarrow = () => window.matchMedia('(max-width: 899px)').matches;
 const escapeHtml = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const scrollTo = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block });
+const pageUrl = () => location.href.split('#')[0];
 
-/* ---------- 4. MENÚ MÓVIL ---------- */
+/* ---------- 5. MENÚ MÓVIL ---------- */
 (function nav() {
   const toggle = $('.nav-toggle');
   const nav = $('#nav');
@@ -135,14 +270,14 @@ const scrollTo = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMo
   const set = (open) => {
     nav.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    toggle.setAttribute('aria-label', open ? TXT.menuClose : TXT.menuOpen);
   };
   toggle.addEventListener('click', () => set(!nav.classList.contains('open')));
   nav.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
 })();
 
-/* ---------- 5. APARICIÓN AL HACER SCROLL ---------- */
+/* ---------- 6. APARICIÓN AL HACER SCROLL ---------- */
 (function reveal() {
   const els = $$('.reveal');
   if (!els.length) return;
@@ -150,7 +285,6 @@ const scrollTo = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMo
     els.forEach((el) => el.classList.add('is-in'));
     return;
   }
-  // Escalonado entre hermanos para que las tarjetas entren en cascada.
   els.forEach((el) => {
     const siblings = Array.from(el.parentElement.children).filter((c) => c.classList.contains('reveal'));
     const i = siblings.indexOf(el);
@@ -166,11 +300,11 @@ const scrollTo = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMo
   els.forEach((el) => io.observe(el));
 })();
 
-/* ---------- 6. CIFRAS QUE CUENTAN ---------- */
+/* ---------- 7. CIFRAS QUE CUENTAN ---------- */
 (function counters() {
   const els = $$('[data-count]');
   if (!els.length) return;
-  // Separador de miles con punto también en cifras de cuatro dígitos (5.807), que es-ES no pone.
+  // Separador de miles con punto también en cifras de cuatro dígitos (5.807).
   const fmt = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
   if (reduceMotion || !('IntersectionObserver' in window)) {
     els.forEach((el) => { el.textContent = fmt(Number(el.dataset.count)); });
@@ -196,7 +330,7 @@ const scrollTo = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMo
   els.forEach((el) => { el.textContent = '0'; io.observe(el); });
 })();
 
-/* ---------- 7. PLANO DE LA CASA ---------- */
+/* ---------- 8. PLANO DE LA CASA ---------- */
 (function rooms() {
   const plan = $('.plan');
   const panel = $('#room-panel');
@@ -234,11 +368,9 @@ const scrollTo = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMo
 
   buttons.forEach((b) => b.addEventListener('click', () => {
     render(b.dataset.room);
-    // En móvil el panel está debajo del plano: si queda fuera de vista, lo acercamos.
     if (isNarrow() && panel.getBoundingClientRect().top > window.innerHeight * 0.7) scrollTo(panel);
   }));
 
-  // Flechas del teclado para moverse entre estancias.
   plan.addEventListener('keydown', (e) => {
     const forward = e.key === 'ArrowRight' || e.key === 'ArrowDown';
     const back = e.key === 'ArrowLeft' || e.key === 'ArrowUp';
@@ -253,7 +385,7 @@ const scrollTo = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMo
   render(current);
 })();
 
-/* ---------- 8. TEST DE DOS MINUTOS ---------- */
+/* ---------- 9. TEST DE DOS MINUTOS ---------- */
 (function test() {
   const list = $('#questions');
   const result = $('#result');
@@ -282,7 +414,7 @@ const scrollTo = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMo
     let score = 0;
     const fixes = [];
     QUESTIONS.forEach((q) => {
-      if (answers[q.id] === 'si') { score += q.w; fixes.push(q.fix); }
+      if (answers[q.id] === 'si') { score += q.w; fixes.push(fixOf(q)); }
     });
     const pct = Math.round((score / totalW) * 100);
     const level = pct >= 55 ? 'alto' : pct >= 25 ? 'medio' : 'bajo';
@@ -295,24 +427,17 @@ const scrollTo = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMo
     result.dataset.level = done ? level : '';
     if (!done) return;
 
-    el.level.textContent = level;
+    el.level.textContent = TXT.levelName[level];
     el.score.style.width = Math.max(pct, 4) + '%';
     el.pct.textContent = pct + ' %';
-    el.text.textContent = LEVELS[level];
+    el.text.textContent = TXT.levelText[level];
     // Enrutar, no rechazar: la promesa de menos caídas solo donde la evidencia la sostiene.
     const fallRisk = ['q2', 'q9', 'q10'].some((id) => answers[id] === 'si');
     el.route.hidden = false;
-    el.route.textContent = fallRisk
-      ? 'Riesgo de caída alto. En personas que ya se han caído o se sienten inestables, adaptar la casa con una terapeuta ocupacional reduce las caídas un 38 %. La visita empieza por ahí.'
-      : 'Riesgo de caída no destacado. Revisaríamos sobre todo incendios, calor y estafas, y mediríamos la marcha en la visita por si acaso.';
+    el.route.textContent = fallRisk ? TXT.routeHigh : TXT.routeLow;
     el.fixesWrap.hidden = fixes.length === 0;
     el.fixes.innerHTML = fixes.map((t) => `<li>${escapeHtml(t)}</li>`).join('');
-
-    const url = location.href.split('#')[0] + '#test';
-    const msg = `He hecho el test de Allgood (la ITV de la casa de tus padres): riesgo ${level}, ${pct} %.`
-      + (fixes.length ? ` Lo primero que revisarían: ${fixes.slice(0, 3).join('; ')}.` : '')
-      + ` Hazlo tú también: ${url}`;
-    el.share.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+    el.share.href = 'https://wa.me/?text=' + encodeURIComponent(TXT.share(TXT.levelName[level], pct, fixes, pageUrl() + '#test'));
   };
 
   list.addEventListener('click', (e) => {
@@ -337,13 +462,17 @@ const scrollTo = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMo
   update();
 })();
 
-/* ---------- 9. CONTACTO Y PRECIO DESDE CONFIG ---------- */
+/* ---------- 10. CONTACTO Y PRECIOS DESDE CONFIG ---------- */
 (function contact() {
-  const price = $('[data-price]');
-  if (price && CONFIG.precio) {
-    price.textContent = CONFIG.precio;
-    price.classList.remove('placeholder');
-  }
+  const fill = (sel, value) => {
+    if (!value) return;
+    $$(sel).forEach((el) => { el.textContent = value; el.classList.remove('placeholder'); });
+  };
+  fill('[data-price]', CONFIG.precio);
+  fill('[data-price-alta]', CONFIG.precioAlta);
+  fill('[data-cuota]', CONFIG.cuotaReferente);
+  fill('[data-cuota-inline]', CONFIG.cuotaReferente);
+
   const phone = $('[data-contact-phone]');
   if (phone && (CONFIG.whatsapp || CONFIG.telefono)) {
     phone.textContent = CONFIG.telefono || '+' + CONFIG.whatsapp;
@@ -357,9 +486,29 @@ const scrollTo = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMo
     email.href = `mailto:${CONFIG.email}`;
     email.classList.remove('placeholder');
   }
+
+  // Pago entre hermanos: solo se muestra cuando hay precio.
+  const precio = Number(CONFIG.precio);
+  const parte = (n) => Math.ceil(precio / n);
+  const split = $('[data-split]');
+  if (split && precio > 0) {
+    split.textContent = TXT.split(parte);
+    split.hidden = false;
+  }
+
+  // El momento de compra es el grupo de los hermanos: mensaje listo para reenviar.
+  const sibs = $('[data-share-sibs]');
+  if (sibs) sibs.href = 'https://wa.me/?text=' + encodeURIComponent(TXT.sibs(precio, parte, pageUrl() + '#reserva'));
+
+  // WhatsApp flotante, solo con número configurado.
+  const wa = $('[data-wa-float]');
+  if (wa && CONFIG.whatsapp) {
+    wa.href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(TXT.waFloat)}`;
+    wa.hidden = false;
+  }
 })();
 
-/* ---------- 10. FORMULARIO DE RESERVA (sin servidor: abre WhatsApp o el correo) ---------- */
+/* ---------- 11. FORMULARIO DE RESERVA (sin servidor: abre WhatsApp o el correo) ---------- */
 (function booking() {
   const form = $('#booking');
   if (!form) return;
@@ -382,27 +531,27 @@ const scrollTo = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMo
     form.nombre.classList.toggle('is-invalid', !nombre);
     form.telefono.classList.toggle('is-invalid', !telefono);
     if (!nombre || !telefono) {
-      say('Necesitamos tu nombre y un teléfono para poder llamarte.', 'is-error');
+      say(TXT.needNamePhone, 'is-error');
       (nombre ? form.telefono : form.nombre).focus();
       return;
     }
 
     const text = [
-      `Hola, soy ${nombre}. Quiero reservar una de las primeras revisiones de Allgood.`,
-      `Teléfono: ${telefono}`,
-      zona ? `La casa está en: ${zona}` : '',
-      interes ? `Me interesa: ${interes}` : '',
-      nota ? `Más información: ${nota}` : ''
+      TXT.bookingIntro(nombre),
+      `${TXT.bookingPhone}: ${telefono}`,
+      zona ? `${TXT.bookingZone}: ${zona}` : '',
+      interes ? `${TXT.bookingInterest}: ${interes}` : '',
+      nota ? `${TXT.bookingMore}: ${nota}` : ''
     ].filter(Boolean).join('\n');
 
     if (CONFIG.whatsapp) {
       window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
-      say('Se abre WhatsApp con tu mensaje preparado. Envíalo y te contestamos.', 'is-ok');
+      say(TXT.openedWhatsapp, 'is-ok');
     } else if (CONFIG.email) {
-      window.location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent('Reserva · Allgood')}&body=${encodeURIComponent(text)}`;
-      say('Se abre tu correo con el mensaje preparado. Envíalo y te contestamos.', 'is-ok');
+      window.location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(TXT.mailSubject)}&body=${encodeURIComponent(text)}`;
+      say(TXT.openedMail, 'is-ok');
     } else {
-      say('Falta el contacto: rellena whatsapp o email en CONFIG (app.js).', 'is-error');
+      say(TXT.missingConfig, 'is-error');
     }
   });
 
@@ -411,36 +560,7 @@ const scrollTo = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMo
   });
 })();
 
-/* ---------- 11. PRECIOS NUEVOS, PAGO ENTRE HERMANOS Y ENVIAR A LOS HERMANOS ---------- */
-(function extras() {
-  const fill = (sel, value) => {
-    if (!value) return;
-    $$(sel).forEach((el) => { el.textContent = value; el.classList.remove('placeholder'); });
-  };
-  fill('[data-price-alta]', CONFIG.precioAlta);
-  fill('[data-cuota]', CONFIG.cuotaReferente);
-  fill('[data-cuota-inline]', CONFIG.cuotaReferente);
-
-  // Pago entre hermanos: solo se muestra cuando hay precio.
-  const precio = Number(CONFIG.precio);
-  const parte = (n) => Math.ceil(precio / n);
-  const split = $('[data-split]');
-  if (split && precio > 0) {
-    split.textContent = `Entre hermanos: ${parte(2)} € cada uno si sois dos, ${parte(3)} € si sois tres, ${parte(4)} € si sois cuatro.`;
-    split.hidden = false;
-  }
-
-  // El momento de compra es el grupo de los hermanos: mensaje listo para reenviar.
-  const sibs = $('[data-share-sibs]');
-  if (sibs) {
-    const url = location.href.split('#')[0] + '#reserva';
-    const precioTxt = precio > 0 ? ` Son ${precio} €; entre tres, ${parte(3)} € cada uno.` : '';
-    const msg = `He visto esto para la casa de papá y mamá: la ITV de la casa. Una terapeuta ocupacional y un técnico de adaptaciones la revisan y resuelven lo pequeño en una mañana, y nos envían el informe a todos.${precioTxt} ¿Lo pagamos entre todos? ${url}`;
-    sibs.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
-  }
-})();
-
-/* ---------- 12. AÑO DE LA PEGATINA, CABECERA AL HACER SCROLL Y WHATSAPP FLOTANTE ---------- */
+/* ---------- 12. AÑO DE LA PEGATINA Y CABECERA AL HACER SCROLL ---------- */
 (function ambiente() {
   const now = new Date().getFullYear();
   $$('[data-year-next]').forEach((el) => { el.textContent = String(now + 1).slice(-2); });
@@ -452,11 +572,5 @@ const scrollTo = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMo
     const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-  }
-
-  const wa = $('[data-wa-float]');
-  if (wa && CONFIG.whatsapp) {
-    wa.href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent('Hola, quiero información sobre la revisión de la casa de mis padres.')}`;
-    wa.hidden = false;
   }
 })();
