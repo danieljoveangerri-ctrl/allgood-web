@@ -23,6 +23,7 @@ const CA = LANG === 'ca';
 /* ---------- 3. CONTENIDO ---------- */
 const ROOMS_ES = {
   dormitorio: {
+    scene: 'Agosto: 31 ºC en su dormitorio a las dos de la madrugada. Y pastillas sueltas en la mesilla.',
     name: 'Dormitorio', tag: 'Calor · Medicación',
     risks: [
       'En verano la habitación pasa de 30 ºC por la noche y nadie lo nota.',
@@ -37,6 +38,7 @@ const ROOMS_ES = {
     ]
   },
   pasillo: {
+    scene: 'Se levanta tres veces por la noche y el pasillo está a oscuras.',
     name: 'Pasillo', tag: 'Caídas',
     risks: [
       'El camino al baño, de noche y a oscuras.',
@@ -50,6 +52,7 @@ const ROOMS_ES = {
     ]
   },
   bano: {
+    scene: 'La bañera alta, el suelo mojado y nada firme a lo que agarrarse.',
     name: 'Baño', tag: 'Caídas',
     risks: [
       'Suelo mojado y bañera alta: uno de los sitios con más caídas.',
@@ -64,6 +67,7 @@ const ROOMS_ES = {
     ]
   },
   salon: {
+    scene: '«Abuela, soy yo. He cambiado de número y necesito dinero».',
     name: 'Salón', tag: 'Estafas',
     risks: [
       'Llamadas del falso nieto con el móvil roto, o del falso banco pidiendo claves.',
@@ -78,6 +82,7 @@ const ROOMS_ES = {
     ]
   },
   cocina: {
+    scene: '¿El detector de humo? Nunca se llegó a poner.',
     name: 'Cocina', tag: 'Incendios',
     risks: [
       'El fuego encendido y olvidado.',
@@ -91,6 +96,7 @@ const ROOMS_ES = {
     ]
   },
   entrada: {
+    scene: 'Un felpudo que se mueve, poca luz al llegar y nadie más que pueda entrar si pasa algo.',
     name: 'Entrada', tag: 'Caídas',
     risks: [
       'Un escalón o un felpudo en el que se tropieza.',
@@ -107,6 +113,7 @@ const ROOMS_ES = {
 
 const ROOMS_CA = {
   dormitorio: {
+    scene: 'Agost: 31 ºC al seu dormitori a les dues de la matinada. I pastilles soltes a la tauleta.',
     name: 'Dormitori', tag: 'Calor · Medicació',
     risks: [
       'A l’estiu l’habitació passa dels 30 ºC a la nit i ningú se n’adona.',
@@ -121,6 +128,7 @@ const ROOMS_CA = {
     ]
   },
   pasillo: {
+    scene: 'S’aixeca tres cops a la nit i el passadís és a les fosques.',
     name: 'Passadís', tag: 'Caigudes',
     risks: [
       'El camí al bany, de nit i a les fosques.',
@@ -134,6 +142,7 @@ const ROOMS_CA = {
     ]
   },
   bano: {
+    scene: 'La banyera alta, el terra mullat i res de ferm on agafar-se.',
     name: 'Bany', tag: 'Caigudes',
     risks: [
       'Terra mullat i banyera alta: un dels llocs amb més caigudes.',
@@ -148,6 +157,7 @@ const ROOMS_CA = {
     ]
   },
   salon: {
+    scene: '«Àvia, soc jo. He canviat de número i necessito diners».',
     name: 'Menjador', tag: 'Estafes',
     risks: [
       'Trucades del fals net amb el mòbil trencat, o del fals banc demanant claus.',
@@ -162,6 +172,7 @@ const ROOMS_CA = {
     ]
   },
   cocina: {
+    scene: 'El detector de fum? Mai es va arribar a posar.',
     name: 'Cuina', tag: 'Incendis',
     risks: [
       'El foc encès i oblidat.',
@@ -175,6 +186,7 @@ const ROOMS_CA = {
     ]
   },
   entrada: {
+    scene: 'Una estora que es mou, poca llum en arribar i ningú més que pugui entrar si passa res.',
     name: 'Entrada', tag: 'Caigudes',
     risks: [
       'Un esglaó o una estora amb què s’entrebanca.',
@@ -191,16 +203,16 @@ const ROOMS_CA = {
 
 // Peso de cada pregunta y lo primero que revisaríamos si la respuesta es «sí».
 const QUESTIONS = [
-  { id: 'q1', w: 2, fix: 'Un plan de aviso: quién llama a quién si algo va mal', fixCa: 'Un pla d’avís: qui truca a qui si alguna cosa va malament' },
-  { id: 'q2', w: 3, fix: 'Revisión completa del riesgo de caídas, habitación por habitación', fixCa: 'Revisió completa del risc de caigudes, habitació per habitació' },
-  { id: 'q9', w: 3, fix: 'Medir la marcha y el equilibrio en la visita, y pautar ejercicio de equilibrio', fixCa: 'Mesurar la marxa i l’equilibri a la visita, i pautar exercici d’equilibri' },
-  { id: 'q10', w: 2, fix: 'Apoyos donde le dan miedo las caídas y un plan para recuperar confianza', fixCa: 'Suports on li fan por les caigudes i un pla per recuperar confiança' },
-  { id: 'q3', w: 2, fix: 'Asideros y antideslizante en el baño', fixCa: 'Agafadors i antilliscant al bany' },
-  { id: 'q4', w: 2, fix: 'Luces con sensor del dormitorio al baño', fixCa: 'Llums amb sensor del dormitori al bany' },
-  { id: 'q5', w: 2, fix: 'Detector de humo instalado y probado', fixCa: 'Detector de fum instal·lat i provat' },
-  { id: 'q6', w: 2, fix: 'Una habitación preparada para las olas de calor', fixCa: 'Una habitació preparada per a les onades de calor' },
-  { id: 'q7', w: 2, fix: 'Pastillero semanal y lista de medicación al día', fixCa: 'Pastiller setmanal i llista de medicació al dia' },
-  { id: 'q8', w: 1, fix: 'Móvil protegido y palabra clave familiar', fixCa: 'Mòbil protegit i paraula clau familiar' }
+  { id: 'q1', q: '¿Vive sola o solo, o pasa muchas horas sin nadie en casa?', qCa: 'Viu sola o sol, o passa moltes hores sense ningú a casa?', w: 2, fix: 'Un plan de aviso: quién llama a quién si algo va mal', fixCa: 'Un pla d’avís: qui truca a qui si alguna cosa va malament' },
+  { id: 'q2', q: '¿Se ha caído alguna vez en el último año?', qCa: 'Ha caigut alguna vegada en l’últim any?', w: 3, fix: 'Revisión completa del riesgo de caídas, habitación por habitación', fixCa: 'Revisió completa del risc de caigudes, habitació per habitació' },
+  { id: 'q9', q: '¿Se siente inestable al andar o se apoya en los muebles para moverse por casa?', qCa: 'Se sent inestable en caminar o s’agafa als mobles per moure’s per casa?', w: 3, fix: 'Medir la marcha y el equilibrio en la visita, y pautar ejercicio de equilibrio', fixCa: 'Mesurar la marxa i l’equilibri a la visita, i pautar exercici d’equilibri' },
+  { id: 'q10', q: '¿Tiene miedo a caerse, o ha dejado de hacer cosas por ese miedo?', qCa: 'Té por de caure, o ha deixat de fer coses per aquesta por?', w: 2, fix: 'Apoyos donde le dan miedo las caídas y un plan para recuperar confianza', fixCa: 'Suports on li fan por les caigudes i un pla per recuperar confiança' },
+  { id: 'q3', q: '¿Se ducha en bañera, o sin asideros donde apoyarse?', qCa: 'Es dutxa a la banyera, o sense agafadors on recolzar-se?', w: 2, fix: 'Asideros y antideslizante en el baño', fixCa: 'Agafadors i antilliscant al bany' },
+  { id: 'q4', q: '¿Se levanta de noche y el camino al baño queda a oscuras?', qCa: 'S’aixeca de nit i el camí al bany queda a les fosques?', w: 2, fix: 'Luces con sensor del dormitorio al baño', fixCa: 'Llums amb sensor del dormitori al bany' },
+  { id: 'q5', q: '¿No hay detector de humo, o no sabéis si funciona?', qCa: 'No hi ha detector de fum, o no sabeu si funciona?', w: 2, fix: 'Detector de humo instalado y probado', fixCa: 'Detector de fum instal·lat i provat' },
+  { id: 'q6', q: '¿En verano su dormitorio pasa mucho calor y no tiene aire acondicionado?', qCa: 'A l’estiu el seu dormitori passa molta calor i no té aire condicionat?', w: 2, fix: 'Una habitación preparada para las olas de calor', fixCa: 'Una habitació preparada per a les onades de calor' },
+  { id: 'q7', q: '¿Toma cinco o más medicamentos al día?', qCa: 'Pren cinc o més medicaments al dia?', w: 2, fix: 'Pastillero semanal y lista de medicación al día', fixCa: 'Pastiller setmanal i llista de medicació al dia' },
+  { id: 'q8', q: '¿Ha recibido llamadas o mensajes sospechosos pidiendo dinero o datos?', qCa: 'Ha rebut trucades o missatges sospitosos demanant diners o dades?', w: 1, fix: 'Móvil protegido y palabra clave familiar', fixCa: 'Mòbil protegit i paraula clau familiar' }
 ];
 
 const TXT_ES = {
@@ -338,7 +350,7 @@ const pageUrl = () => location.href.split('#')[0];
   const body = $('.room-body', panel);
   const nameEl = $('[data-room-name]', panel);
   const tagEl = $('[data-room-tag]', panel);
-  const risksEl = $('[data-room-risks]', panel);
+  const sceneEl = $('[data-room-scene]', panel);
   const fixesEl = $('[data-room-fixes]', panel);
   const buttons = $$('.room', plan);
   let current = 'bano';
@@ -347,7 +359,7 @@ const pageUrl = () => location.href.split('#')[0];
   const paint = (room) => {
     nameEl.textContent = room.name;
     tagEl.textContent = room.tag;
-    risksEl.innerHTML = room.risks.map((t) => `<li>${escapeHtml(t)}</li>`).join('');
+    if (sceneEl) sceneEl.textContent = room.scene || '';
     fixesEl.innerHTML = room.fixes.map((t) => `<li>${escapeHtml(t)}</li>`).join('');
   };
 
@@ -366,9 +378,25 @@ const pageUrl = () => location.href.split('#')[0];
     timer = setTimeout(() => { paint(room); body.classList.remove('is-switching'); }, 160);
   };
 
+  const backdrop = $('.sheet-backdrop');
+  const openSheet = () => {
+    if (!isNarrow()) return;
+    panel.classList.add('open');
+    if (backdrop) { backdrop.hidden = false; requestAnimationFrame(() => backdrop.classList.add('show')); }
+    document.body.classList.add('sheet-open');
+  };
+  const closeSheet = () => {
+    panel.classList.remove('open');
+    if (backdrop) { backdrop.classList.remove('show'); setTimeout(() => { backdrop.hidden = true; }, 400); }
+    document.body.classList.remove('sheet-open');
+  };
+  $$('[data-sheet-close]').forEach((el) => el.addEventListener('click', closeSheet));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSheet(); });
+  window.addEventListener('resize', () => { if (!isNarrow()) closeSheet(); });
+
   buttons.forEach((b) => b.addEventListener('click', () => {
     render(b.dataset.room);
-    if (isNarrow() && panel.getBoundingClientRect().top > window.innerHeight * 0.7) scrollTo(panel);
+    openSheet();
   }));
 
   plan.addEventListener('keydown', (e) => {
@@ -385,81 +413,85 @@ const pageUrl = () => location.href.split('#')[0];
   render(current);
 })();
 
-/* ---------- 9. TEST DE DOS MINUTOS ---------- */
-(function test() {
-  const list = $('#questions');
-  const result = $('#result');
-  if (!list || !result) return;
-  const answers = {};
-  const total = QUESTIONS.length;
-  const totalW = QUESTIONS.reduce((s, q) => s + q.w, 0);
+/* ---------- 9. TEST: UNA PREGUNTA CADA VEZ ---------- */
+(function quiz() {
+  const root = $('#quiz');
+  if (!root) return;
+  const card = $('[data-quiz-card]', root);
+  const result = $('[data-quiz-result]', root);
   const el = {
-    answered: $('[data-answered]', result),
-    progress: $('[data-progress]', result),
-    pending: $('[data-pending]', result),
-    done: $('[data-done]', result),
-    level: $('[data-level]', result),
-    score: $('[data-score]', result),
-    pct: $('[data-pct]', result),
-    text: $('[data-level-text]', result),
-    route: $('[data-route]', result),
-    fixesWrap: $('[data-fixes-wrap]', result),
-    fixes: $('[data-fixes]', result),
-    share: $('[data-share]', result),
-    reset: $('[data-reset]', result)
+    index: $('[data-quiz-index]', root), bar: $('[data-quiz-bar]', root), q: $('[data-quiz-q]', root),
+    back: $('[data-quiz-back]', root), buttons: $$('[data-quiz-answer]', root),
+    level: $('[data-level]', result), score: $('[data-score]', result), pct: $('[data-pct]', result),
+    text: $('[data-level-text]', result), route: $('[data-route]', result),
+    fixesWrap: $('[data-fixes-wrap]', result), fixes: $('[data-fixes]', result),
+    share: $('[data-share]', result), reset: $('[data-quiz-reset]', result)
+  };
+  const total = QUESTIONS.length;
+  const totalW = QUESTIONS.reduce((sum, q) => sum + q.w, 0);
+  const answers = {};
+  let i = 0;
+
+  const show = (n) => {
+    i = Math.max(0, Math.min(n, total - 1));
+    const q = QUESTIONS[i];
+    el.index.textContent = String(i + 1);
+    el.bar.style.width = Math.round(((i + 1) / total) * 100) + '%';
+    // Reinicia la animación de entrada de la pregunta.
+    el.q.style.animation = 'none';
+    void el.q.offsetWidth;
+    el.q.style.animation = '';
+    el.q.textContent = CA ? q.qCa : q.q;
+    el.back.hidden = i === 0;
+    el.buttons.forEach((b) => b.classList.toggle('is-pressed', answers[q.id] === b.dataset.quizAnswer));
   };
 
-  const update = () => {
-    const answered = Object.keys(answers).length;
+  const finish = () => {
     let score = 0;
     const fixes = [];
-    QUESTIONS.forEach((q) => {
-      if (answers[q.id] === 'si') { score += q.w; fixes.push(fixOf(q)); }
-    });
+    QUESTIONS.forEach((q) => { if (answers[q.id] === 'si') { score += q.w; fixes.push(fixOf(q)); } });
     const pct = Math.round((score / totalW) * 100);
     const level = pct >= 55 ? 'alto' : pct >= 25 ? 'medio' : 'bajo';
-    const done = answered === total;
-
-    el.answered.textContent = String(answered);
-    el.progress.style.width = Math.round((answered / total) * 100) + '%';
-    el.pending.hidden = done;
-    el.done.hidden = !done;
-    result.dataset.level = done ? level : '';
-    if (!done) return;
-
+    root.dataset.level = level;
     el.level.textContent = TXT.levelName[level];
     el.score.style.width = Math.max(pct, 4) + '%';
     el.pct.textContent = pct + ' %';
     el.text.textContent = TXT.levelText[level];
     // Enrutar, no rechazar: la promesa de menos caídas solo donde la evidencia la sostiene.
     const fallRisk = ['q2', 'q9', 'q10'].some((id) => answers[id] === 'si');
-    el.route.hidden = false;
     el.route.textContent = fallRisk ? TXT.routeHigh : TXT.routeLow;
     el.fixesWrap.hidden = fixes.length === 0;
     el.fixes.innerHTML = fixes.map((t) => `<li>${escapeHtml(t)}</li>`).join('');
     el.share.href = 'https://wa.me/?text=' + encodeURIComponent(TXT.share(TXT.levelName[level], pct, fixes, pageUrl() + '#test'));
+    card.hidden = true;
+    result.hidden = false;
+    if (isNarrow()) scrollTo(root, 'start');
   };
 
-  list.addEventListener('click', (e) => {
-    const btn = e.target.closest('.q-btn');
-    if (!btn) return;
-    const q = btn.closest('.q');
-    answers[q.dataset.q] = btn.dataset.answer;
-    $$('.q-btn', q).forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
-    q.classList.add('is-answered');
-    update();
-    if (Object.keys(answers).length === total && isNarrow()) scrollTo(result);
-  });
-
+  el.buttons.forEach((b) => b.addEventListener('click', () => {
+    answers[QUESTIONS[i].id] = b.dataset.quizAnswer;
+    b.classList.add('is-pressed');
+    setTimeout(() => {
+      if (i === total - 1) finish(); else show(i + 1);
+    }, reduceMotion ? 0 : 180);
+  }));
+  el.back.addEventListener('click', () => show(i - 1));
   el.reset.addEventListener('click', () => {
     Object.keys(answers).forEach((k) => delete answers[k]);
-    $$('.q-btn', list).forEach((b) => b.setAttribute('aria-pressed', 'false'));
-    $$('.q', list).forEach((q) => q.classList.remove('is-answered'));
-    update();
-    scrollTo(list);
+    root.dataset.level = '';
+    result.hidden = true;
+    card.hidden = false;
+    show(0);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (card.hidden || !root.matches(':hover') && !root.contains(document.activeElement)) return;
+    const k = e.key.toLowerCase();
+    if (k === 's') el.buttons[0].click();
+    if (k === 'n') el.buttons[1].click();
+    if (e.key === 'ArrowLeft' && i > 0) show(i - 1);
   });
 
-  update();
+  show(0);
 })();
 
 /* ---------- 10. CONTACTO Y PRECIOS DESDE CONFIG ---------- */
@@ -573,4 +605,43 @@ const pageUrl = () => location.href.split('#')[0];
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
   }
+})();
+
+/* ---------- 13. LA CASA SE ENCIENDE AL DESLIZAR ---------- */
+(function stage() {
+  const stage = $('.stage');
+  if (!stage) return;
+  if (reduceMotion) { stage.style.setProperty('--p', '1'); return; }
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const rect = stage.getBoundingClientRect();
+    const travel = stage.offsetHeight - window.innerHeight;
+    const p = travel > 0 ? Math.min(1, Math.max(0, -rect.top / travel)) : 1;
+    // Ligera curva para que la casa se encienda con decisión en la segunda mitad del recorrido.
+    const eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+    stage.style.setProperty('--p', eased.toFixed(3));
+  };
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+
+/* ---------- 14. RAÍL DE PROGRESO ---------- */
+(function rail() {
+  const rail = $('.rail');
+  if (!rail || !('IntersectionObserver' in window)) return;
+  const links = $$('a[data-rail]', rail);
+  const ids = links.map((a) => a.dataset.rail);
+  const mark = (id) => {
+    links.forEach((a) => a.classList.toggle('active', a.dataset.rail === id));
+    const sec = document.getElementById(id);
+    rail.classList.toggle('on-dark', !!sec && (sec.classList.contains('section-navy') || sec.classList.contains('stage')));
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => { if (en.isIntersecting) mark(en.target.id); });
+  }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+  ids.forEach((id) => { const sec = document.getElementById(id); if (sec) io.observe(sec); });
+  mark(ids[0]);
 })();
