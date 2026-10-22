@@ -4,9 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Allgood · La ITV de la casa de tus padres</title>
-<meta name="description" content="Una mañana al año, una terapeuta ocupacional y un técnico de adaptaciones revisan la casa de tus padres en Barcelona, resuelven lo pequeño en la misma visita y te envían el informe.">
+<meta name="description" content="Una terapeuta ocupacional y un técnico revisan la casa de tus padres en Barcelona, resuelven lo pequeño en la visita y te envían el informe.">
 <meta name="theme-color" content="#0E1B2C">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://danieljoveangerri-ctrl.github.io/allgood-web/">
+<meta property="og:image" content="https://danieljoveangerri-ctrl.github.io/allgood-web/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" content="Allgood · La ITV de la casa de tus padres">
 <meta property="og:description" content="Caídas, incendios, calor, estafas y medicación. Dos profesionales, una mañana, un informe para la familia. Barcelona.">
@@ -15,8 +19,9 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="styles.css?v=20261022">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,600..900&family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="styles.css?v=20261022c">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Allgood","description":"Revisión del hogar de personas mayores en Barcelona. Una terapeuta ocupacional y un técnico de adaptaciones revisan la casa, resuelven lo pequeño en la misma visita y envían un informe a la familia.","areaServed":{"@type":"City","name":"Barcelona"},"knowsAbout":["prevención de caídas","seguridad en el hogar","personas mayores"]}
 </script>
@@ -24,8 +29,9 @@
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"¿Tengo que estar en la visita?","acceptedAnswer":{"@type":"Answer","text":"No hace falta. Antes de ir, la terapeuta llama a tus padres; durante la visita puedes estar al teléfono, y el informe te llega el mismo día."}},
 {"@type":"Question","name":"¿Y si mi madre dice que no?","acceptedAnswer":{"@type":"Answer","text":"La visita está pensada para ella: la llama la terapeuta antes, nada se instala sin su sí y delante de ella no hay inspección ni notas. Si no quiere, no insistimos y buscamos otro momento."}},
-{"@type":"Question","name":"¿Qué incluye el precio y qué no?","acceptedAnswer":{"@type":"Answer","text":"Incluye la visita de los dos profesionales, las adaptaciones pequeñas hechas en el acto con el material habitual, el informe y la carta para su médico. No incluye obras ni aparatos grandes."}},
-{"@type":"Question","name":"¿Hacéis obras?","acceptedAnswer":{"@type":"Answer","text":"No. Lo que cabe en una mañana lo hacemos; lo demás lo prescribimos con presupuesto de terceros. No vendemos reformas ni aparatos."}},
+{"@type":"Question","name":"¿Quién entra en casa de mis padres?","acceptedAnswer":{"@type":"Answer","text":"Una terapeuta ocupacional colegiada y un técnico de adaptaciones. Antes de la visita recibes su nombre, su foto y su número de colegiada. En casa nadie cobra ni vende nada."}},
+{"@type":"Question","name":"¿Qué incluye el precio y qué no?","acceptedAnswer":{"@type":"Answer","text":"La visita de los dos profesionales, dos o tres horas; las adaptaciones pequeñas hechas en el acto con material habitual; el informe y la carta para su médico. No incluye obras ni aparatos grandes: lo que haga falta queda por escrito en el informe, con presupuesto de terceros. No vendemos reformas ni aparatos."}},
+{"@type":"Question","name":"¿Y si tienen derecho a la ayuda del Ayuntamiento?","acceptedAnswer":{"@type":"Answer","text":"Si viven en Barcelona y sus ingresos no superan 1,5 veces el IRSC, unos 19.200 € al año por persona, el Programa d'adaptació funcional de la llar adapta la casa gratis. Te decimos cómo pedirlo."}},
 {"@type":"Question","name":"¿Es una valoración médica?","acceptedAnswer":{"@type":"Answer","text":"No. La hace una terapeuta ocupacional colegiada. No hacemos diagnósticos ni tratamientos: lo que requiere un médico se lo pedimos por escrito a su médico de cabecera."}},
 {"@type":"Question","name":"¿Cómo tratáis sus datos?","acceptedAnswer":{"@type":"Answer","text":"Son datos de salud: solo se recogen con el consentimiento de tus padres, se guardan en servidores de la Unión Europea y ellos deciden con quién se comparte el informe."}}
 ]}
@@ -42,7 +48,7 @@
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú"><span></span><span></span><span></span></button>
     <nav class="nav" id="nav" aria-label="Secciones">
-      <a href="#casa">La casa</a>
+      <a href="#casa">Qué revisamos</a>
       <a href="#test">El test</a>
       <a href="#como">Cómo funciona</a>
       <a href="#faq">Preguntas</a>
@@ -71,11 +77,10 @@
       <div class="hero-copy">
         <p class="eyebrow eyebrow-accent in-1">Revisión del hogar · Barcelona</p>
         <h1 class="in-2">La <span class="accent">ITV</span> de la casa de tus padres.</h1>
-        <p class="lead in-3">Una mañana al año, una terapeuta ocupacional y un técnico de adaptaciones revisan su casa y resuelven en el acto lo que puede provocar una caída, un incendio, un golpe de calor o una estafa. Tú recibes el informe.</p>
-        <p class="lead lead-short in-3">Una mañana al año, una terapeuta ocupacional y un técnico revisan su casa, resuelven en el acto lo que puede provocar una caída, un incendio o una estafa, y tú recibes el informe.</p>
+        <p class="lead in-3">Una mañana al año, una terapeuta ocupacional y un técnico revisan su casa, resuelven en el acto lo que puede acabar en caída, incendio o estafa, y tú recibes el informe ese mismo día.</p>
         <div class="hero-actions in-4">
-          <a class="btn btn-accent btn-lg" href="#test">Haz el test de su casa <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn btn-ghost btn-lg" href="#reserva">Reservar</a>
+          <a class="btn btn-accent btn-lg" href="#test">Haz el test · 1 minuto <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost btn-lg" href="#reserva">Reservar la visita</a>
         </div>
         <p class="hero-alt in-4">¿Acaba de salir del hospital? <a href="#reserva">Alta segura: la visita en menos de 72 horas</a>.</p>
       </div>
@@ -135,7 +140,7 @@
             <text x="420" y="168" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="9" letter-spacing="1.5" fill="#0E1B2C">REVISADA</text>
           </g>
         </svg>
-        <p class="stage-caption" aria-live="polite"><span class="cap-off">Así está hoy: a oscuras, con tres cosas que pueden pasar.</span><span class="cap-on">Así la dejamos: luces de paso, detector, asideros y la pegatina del año.</span></p>
+        <p class="stage-caption" aria-hidden="true"><span class="cap-off">Hoy, a oscuras: tres puntos sin resolver. Desliza.</span><span class="cap-on">Después: luz de paso, asideros, detector y la pegatina del año.</span></p>
       </div>
     </div>
     <p class="scroll-cue" aria-hidden="true"><span></span>Desliza para encender la casa</p>
@@ -151,15 +156,15 @@
     <div class="numbers">
       <div class="number reveal">
         <p class="number-n"><span data-count="60000">60.000</span></p>
-        <p>fracturas de cadera al año en España. Cada una, unos 9.900 € y una de cada tres personas fallece en los dos años siguientes.</p>
+        <p>fracturas de cadera al año en España. Casi todas, por una caída; la mayoría, en casa.</p>
       </div>
       <div class="number reveal">
-        <p class="number-n red"><span data-count="5807">5.807</span></p>
+        <p class="number-n red">+<span data-count="5200">5.200</span></p>
         <p>muertes por calor en el verano de 2026, la cifra más alta en una década. Casi todas, mayores de 65.</p>
       </div>
       <div class="number reveal">
         <p class="number-n">1 de 2</p>
-        <p>mayores que se caen vuelve a caerse ese mismo año. Y menos de uno de cada diez hogares tiene detector de humo.</p>
+        <p>mayores que se caen vuelve a caerse ese mismo año.</p>
       </div>
     </div>
     <p class="fine-src">Cifras del INE, del sistema MoMo del Instituto de Salud Carlos III y de la literatura clínica. <a href="#fuentes">Ver las fuentes</a>.</p>
@@ -169,25 +174,25 @@
 <!-- ============ 02 · LA CASA ============ -->
 <section class="section section-cream" id="casa">
   <div class="wrap">
-    <p class="eyebrow">02 · Toca una estancia</p>
-    <h2 class="h2">Seis estancias, cinco frentes, una mañana.</h2>
+    <p class="eyebrow">02 · Elige una estancia</p>
+    <h2 class="h2">Seis estancias, cinco riesgos, una mañana.</h2>
     <p class="sub">Así es una visita: estancia por estancia, con los ojos de quien vive en ella. Toca cualquiera y mira qué solemos encontrar y qué dejamos resuelto.</p>
     <div class="house">
       <div class="plan-wrap">
         <div class="plan" role="tablist" aria-label="Plano de la casa">
-          <button class="room" type="button" role="tab" data-room="dormitorio" aria-selected="false" aria-controls="room-panel" style="grid-area:dormitorio"><span class="room-head"><span class="room-name">Dormitorio</span><span class="room-dot"></span></span><span class="room-tag">Calor · Pastillas</span></button>
-          <button class="room" type="button" role="tab" data-room="pasillo" aria-selected="false" aria-controls="room-panel" style="grid-area:pasillo"><span class="room-head"><span class="room-name">Pasillo</span><span class="room-dot"></span></span><span class="room-tag">Caídas</span></button>
-          <button class="room" type="button" role="tab" data-room="bano" aria-selected="true" aria-controls="room-panel" style="grid-area:bano"><span class="room-head"><span class="room-name">Baño</span><span class="room-dot"></span></span><span class="room-tag">Caídas</span></button>
-          <button class="room" type="button" role="tab" data-room="salon" aria-selected="false" aria-controls="room-panel" style="grid-area:salon"><span class="room-head"><span class="room-name">Salón</span><span class="room-dot"></span></span><span class="room-tag">Estafas</span></button>
-          <button class="room" type="button" role="tab" data-room="cocina" aria-selected="false" aria-controls="room-panel" style="grid-area:cocina"><span class="room-head"><span class="room-name">Cocina</span><span class="room-dot"></span></span><span class="room-tag">Incendios</span></button>
-          <button class="room" type="button" role="tab" data-room="entrada" aria-selected="false" aria-controls="room-panel" style="grid-area:entrada"><span class="room-head"><span class="room-name">Entrada</span><span class="room-dot"></span></span><span class="room-tag">Caídas</span></button>
+          <button class="room" type="button" role="tab" id="tab-dormitorio" data-room="dormitorio" aria-selected="false" aria-controls="room-panel" style="grid-area:dormitorio"><span class="room-head"><span class="room-name">Dormitorio</span><span class="room-dot"></span></span><span class="room-tag">Calor · Medicación</span></button>
+          <button class="room" type="button" role="tab" id="tab-pasillo" data-room="pasillo" aria-selected="false" aria-controls="room-panel" style="grid-area:pasillo"><span class="room-head"><span class="room-name">Pasillo</span><span class="room-dot"></span></span><span class="room-tag">Caídas</span></button>
+          <button class="room" type="button" role="tab" id="tab-bano" data-room="bano" aria-selected="true" aria-controls="room-panel" style="grid-area:bano"><span class="room-head"><span class="room-name">Baño</span><span class="room-dot"></span></span><span class="room-tag">Caídas</span></button>
+          <button class="room" type="button" role="tab" id="tab-salon" data-room="salon" aria-selected="false" aria-controls="room-panel" style="grid-area:salon"><span class="room-head"><span class="room-name">Salón</span><span class="room-dot"></span></span><span class="room-tag">Estafas</span></button>
+          <button class="room" type="button" role="tab" id="tab-cocina" data-room="cocina" aria-selected="false" aria-controls="room-panel" style="grid-area:cocina"><span class="room-head"><span class="room-name">Cocina</span><span class="room-dot"></span></span><span class="room-tag">Incendios</span></button>
+          <button class="room" type="button" role="tab" id="tab-entrada" data-room="entrada" aria-selected="false" aria-controls="room-panel" style="grid-area:entrada"><span class="room-head"><span class="room-name">Entrada</span><span class="room-dot"></span></span><span class="room-tag">Caídas</span></button>
         </div>
-        <ul class="fronts-row" aria-label="Los cinco frentes">
+        <ul class="fronts-row" aria-label="Los cinco riesgos">
           <li>Caídas</li><li>Incendios</li><li>Calor</li><li>Estafas</li><li>Medicación</li>
         </ul>
       </div>
       <div class="sheet-backdrop" data-sheet-close hidden></div>
-      <div class="room-panel" id="room-panel" role="tabpanel" aria-live="polite">
+      <div class="room-panel" id="room-panel" role="tabpanel" aria-labelledby="tab-bano">
         <button class="sheet-close" type="button" data-sheet-close aria-label="Cerrar">×</button>
         <div class="room-body">
           <div class="room-panel-head"><span class="eyebrow">Estancia</span><span class="chip chip-accent" data-room-tag>Caídas</span></div>
@@ -201,7 +206,7 @@
             <li>Agua de la ducha a temperatura segura, con limitador si hace falta</li>
           </ul>
         </div>
-        <p class="room-foot">Lo pequeño, en la misma visita. Lo grande, prescrito en el informe con presupuesto de empresas de confianza.</p>
+        <p class="room-foot">Lo pequeño, en la misma visita. Lo grande, por escrito en el informe. No vendemos obras.</p>
       </div>
     </div>
   </div>
@@ -213,34 +218,33 @@
     <div class="test-copy">
       <p class="eyebrow eyebrow-accent">03 · Test de un minuto</p>
       <h2 class="h2">¿Cómo está la casa de tus padres?</h2>
-      <p class="sub">Diez preguntas, una cada vez. Es orientativo, pero te dirá por dónde empezar y qué revisaríamos primero.</p>
+      <p class="sub">Diez preguntas de sí o no. Te dice por dónde empezar y qué revisaríamos primero.</p>
     </div>
     <div class="quiz" id="quiz" data-total="10">
       <div class="quiz-card" data-quiz-card>
         <div class="quiz-top">
-          <span class="quiz-count"><span data-quiz-index>1</span> / 10</span>
+          <span class="quiz-count" aria-live="polite"><span data-quiz-index>1</span> / 10</span>
           <div class="quiz-bar" aria-hidden="true"><span data-quiz-bar style="width:10%"></span></div>
         </div>
-        <p class="quiz-q" data-quiz-q>¿Vive sola o solo, o pasa muchas horas sin nadie en casa?</p>
+        <p class="quiz-q" data-quiz-q aria-live="polite" aria-atomic="true">¿Vive sola o solo, o pasa muchas horas sin nadie en casa?</p>
         <div class="quiz-actions">
-          <button type="button" class="quiz-btn" data-quiz-answer="si">Sí</button>
-          <button type="button" class="quiz-btn" data-quiz-answer="no">No</button>
+          <button type="button" class="quiz-btn" data-quiz-answer="si" aria-pressed="false">Sí</button>
+          <button type="button" class="quiz-btn" data-quiz-answer="no" aria-pressed="false">No</button>
         </div>
         <button type="button" class="quiz-back" data-quiz-back hidden>← Anterior</button>
       </div>
-      <div class="quiz-result" data-quiz-result hidden>
+      <div class="quiz-result" data-quiz-result hidden tabindex="-1">
         <p class="eyebrow">Resultado</p>
         <p class="result-level">Riesgo <span data-level>bajo</span></p>
         <div class="score" aria-hidden="true"><span data-score style="width:4%"></span></div>
-        <p class="result-pct" data-pct>0 %</p>
-        <p class="result-text" data-level-text></p>
+                <p class="result-text" data-level-text></p>
         <p class="result-route" data-route></p>
         <div data-fixes-wrap hidden>
           <p class="label">Lo primero que revisaríamos</p>
           <ul class="list list-fix list-fix-accent" data-fixes></ul>
         </div>
         <div class="result-actions">
-          <a class="btn btn-accent" href="#reserva">Reservar una revisión</a>
+          <a class="btn btn-accent" href="#reserva">Reservar la visita</a>
           <a class="btn btn-ghost" data-share href="https://wa.me/" target="_blank" rel="noopener">Compartir por WhatsApp</a>
           <button type="button" class="link-btn" data-quiz-reset>Repetir el test</button>
         </div>
@@ -265,12 +269,12 @@
       <li class="moment reveal">
         <span class="moment-n">02</span>
         <h3>La visita</h3>
-        <p>Una terapeuta ocupacional observa cómo se mueven y cómo viven. Un técnico de adaptaciones instala lo necesario en el acto: asideros, luces con sensor, detector de humo, alfombras fijadas. Lo primero se ve en media hora.</p>
+        <p>Una terapeuta ocupacional observa cómo se mueven y cómo viven. Un técnico instala en el acto lo que hace falta: asideros, luces con sensor, detector de humo, alfombras fijadas.</p>
       </li>
       <li class="moment reveal">
         <span class="moment-n">03</span>
         <h3>Después</h3>
-        <p>El informe el mismo día, con fotos de antes y después, para toda la familia, y una carta de una página para su médico. Y si queréis, la referente: una llamada al mes a tus padres y dos visitas cortas al año.</p>
+        <p>El informe el mismo día, con fotos de antes y después, para toda la familia, y una carta de una página para su médico. Y si queréis, una referente el resto del año: una llamada al mes a tus padres y dos visitas cortas.</p>
       </li>
     </ol>
     <details class="more reveal">
@@ -291,7 +295,7 @@
   <div class="wrap">
     <p class="eyebrow eyebrow-accent">05 · Primeras revisiones</p>
     <h2 class="h2">Reserva una de las primeras revisiones.</h2>
-    <p class="sub">Empezamos con un grupo pequeño de casas en Barcelona. Dos formas de empezar.</p>
+    <p class="sub">Un grupo pequeño de casas en Barcelona, para empezar. Dos opciones.</p>
     <div class="reserva">
       <div class="reserva-copy">
         <div class="offers">
@@ -314,19 +318,18 @@
             </ul>
           </article>
         </div>
-        <p class="offers-note">Y después, si queréis, la referente: <span data-cuota-inline>[CUOTA]</span> € al mes, sin permanencia.</p>
+        <p class="offers-note">Y después, si queréis, una referente el resto del año: <span data-cuota-inline>[CUOTA]</span> € al mes, sin permanencia.</p>
         <p class="evidence-line reveal"><strong>38 % menos caídas</strong> cuando una terapeuta ocupacional adapta la casa de alguien con riesgo alto. Revisión Cochrane de 2023, certeza alta. En casas sin riesgo no reduce las caídas: por eso primero medimos. <a href="#fuentes">Evidencia y fuentes</a>.</p>
-        <p class="triage-line reveal">Si tus padres viven en Barcelona y sus ingresos no superan 1,5 veces el IRSC, unos 19.200 € al año para una persona, el Ayuntamiento adapta la casa gratis con el <a href="https://ajuntament.barcelona.cat/personesgrans/ca/programa-dadaptacio-funcional-de-la-llar-persones-grans" target="_blank" rel="noopener">Programa d'adaptació funcional de la llar</a>. Te decimos cómo pedirlo.</p>
       </div>
       <form class="booking reveal" id="booking" novalidate>
         <p class="eyebrow">Reserva</p>
-        <label>Tu nombre<input name="nombre" type="text" required autocomplete="name"></label>
-        <label>Tu teléfono<input name="telefono" type="tel" required autocomplete="tel" inputmode="tel"></label>
+        <label>Tu nombre<input name="nombre" type="text" required autocomplete="name" aria-describedby="form-note"></label>
+        <label>Tu teléfono<input name="telefono" type="tel" required autocomplete="tel" inputmode="tel" aria-describedby="form-note"></label>
         <label>Barrio o municipio de la casa<input name="zona" type="text" placeholder="Sant Andreu, Gràcia, Badalona…"></label>
-        <label>¿Qué te interesa?<select name="interes"><option>Puesta a punto</option><option>Alta segura</option><option>Puesta a punto y referente</option><option>No lo sé todavía</option></select></label>
+        <label>¿Qué te interesa?<select name="interes"><option>Puesta a punto</option><option>Alta segura</option><option>Puesta a punto con referente</option><option>No lo sé todavía</option></select></label>
         <label>¿Algo que debamos saber?<textarea name="nota" rows="2" placeholder="Vive sola, se cayó en marzo, tercero sin ascensor…"></textarea></label>
-        <button class="btn btn-accent btn-lg btn-full" type="submit">Quiero una de las primeras revisiones</button>
-        <p class="form-note" data-form-note>Sin compromiso. Te contestamos nosotros, no un formulario.</p>
+        <button class="btn btn-accent btn-lg btn-full" type="submit" data-submit>Reservar la visita</button>
+        <p class="form-note" data-form-note id="form-note" role="status">Sin compromiso. Te contestamos nosotros, no un formulario.</p>
         <p class="split" data-split hidden></p>
         <a class="share-sibs" data-share-sibs href="https://wa.me/" target="_blank" rel="noopener">Enviar esto a mis hermanos por WhatsApp</a>
         <div class="contact-lines">
@@ -346,9 +349,10 @@
     <div class="faq">
       <details class="faq-item reveal"><summary>¿Tengo que estar en la visita?</summary><p>No hace falta. Muchos hijos viven lejos. Antes de ir, la terapeuta llama a tus padres; durante la visita puedes estar al teléfono si quieres, y el informe te llega el mismo día.</p></details>
       <details class="faq-item reveal"><summary>¿Y si mi madre dice que no?</summary><p>Es lo más habitual al principio. Por eso la visita está pensada para ella: la llama la terapeuta antes, nada se instala sin su sí y delante de ella no hay inspección ni notas. Si aun así no quiere, no insistimos: lo hablamos contigo y buscamos otro momento.</p></details>
-      <details class="faq-item reveal"><summary>¿Qué incluye el precio y qué no?</summary><p>Incluye la visita de los dos profesionales, entre dos y tres horas, las adaptaciones pequeñas que se hacen en el acto con el material habitual, asideros, luces con sensor, detector de humo, antideslizante y fijación de alfombras, el informe y la carta para su médico. No incluye obras ni aparatos grandes: para eso te dejamos presupuesto cerrado de empresas de confianza. Empezamos en Barcelona ciudad.</p></details>
-      <details class="faq-item reveal"><summary>¿Hacéis obras?</summary><p>No. Lo que cabe en una mañana lo hacemos; lo que no, lo prescribimos en el informe con presupuesto de terceros. Nuestro criterio no depende de ninguna obra: no vendemos reformas ni aparatos.</p></details>
+      <details class="faq-item reveal"><summary>¿Quién entra en casa de mis padres?</summary><p>Una terapeuta ocupacional colegiada y un técnico de adaptaciones. Antes de la visita recibes su nombre, su foto y su número de colegiada. En casa nadie cobra ni vende nada.</p></details>
+      <details class="faq-item reveal"><summary>¿Qué incluye el precio y qué no?</summary><p>La visita de los dos profesionales, dos o tres horas; las adaptaciones pequeñas hechas en el acto con material habitual: asideros, luces con sensor, detector de humo, antideslizante, alfombras fijadas; el informe y la carta para su médico. No incluye obras ni aparatos grandes: lo que haga falta queda por escrito en el informe, con presupuesto de terceros. No vendemos reformas ni aparatos.</p></details>
       <details class="faq-item reveal"><summary>¿Es una valoración médica? ¿Y si encontráis algo grave?</summary><p>No es médica: la hace una terapeuta ocupacional colegiada, que valora cómo se mueve y cómo vive la persona en su casa, sin diagnósticos ni tratamientos. Lo que requiere un médico se lo pedimos por escrito a su médico de cabecera. Si detecta algo que necesita atención urgente, lo hablamos contigo en el momento y lo derivamos con un protocolo escrito.</p></details>
+      <details class="faq-item reveal"><summary>¿Y si tienen derecho a la ayuda del Ayuntamiento?</summary><p>Si viven en Barcelona y sus ingresos no superan 1,5 veces el IRSC, unos 19.200 € al año por persona, el <a href="https://ajuntament.barcelona.cat/personesgrans/ca/programa-dadaptacio-funcional-de-la-llar-persones-grans" target="_blank" rel="noopener">Programa d'adaptació funcional de la llar</a> adapta la casa gratis. Te decimos cómo pedirlo.</p></details>
       <details class="faq-item reveal"><summary>¿Cómo tratáis sus datos?</summary><p>La información de la visita son datos de salud. Solo se recogen con el consentimiento de tus padres, se guardan en servidores de la Unión Europea y son ellos quienes deciden con quién se comparte el informe.</p></details>
     </div>
     <details class="sources-wrap reveal" id="fuentes">
@@ -360,13 +364,11 @@
         <li>Desde abril de 2026 el consenso estatal de prevención de caídas pide revisar los riesgos del hogar desde los 70 años en atención primaria. <a href="https://www.sanidad.gob.es/gabinete/notasPrensa.do?id=6883" target="_blank" rel="noopener">Ministerio de Sanidad</a></li>
       </ul>
       <ol class="sources">
-        <li>Mayores de 65 que viven solos, Padrón y Censo del INE. <a href="https://www.euribor.com.es/2026/06/28/los-15-municipios-espanoles-donde-mas-jubilados-viven-solos/" target="_blank" rel="noopener">euribor.com.es</a></li>
         <li>Fracturas de cadera en España y coste por fractura. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7025055" target="_blank" rel="noopener">PubMed Central</a></li>
         <li>Mortalidad tras fractura de cadera, SEIOMM. <a href="https://www.redaccionmedica.com/ultimas-noticias/20230111/mas-de-millones-espanolas-con-alto-riesgo-fractura-siguen-sin-tratamiento-por-osteoporosis/95365_0.html" target="_blank" rel="noopener">Redacción Médica</a></li>
         <li>Recaídas en mayores que se caen, Consejo General de Enfermería. <a href="https://www.eldebate.com/sociedad/20241024/caidas-hospitales-suponen-gasto-30000-millones-ano-espana-segun-consejo-general-enfermeria_237473.html" target="_blank" rel="noopener">El Debate</a></li>
         <li>Detectores de humo en hogares españoles, Bomberos de la Comunidad de Madrid. <a href="https://comunidad.madrid/sites/default/files/230331_np_presjustin_campana_baterias_seguras.pdf" target="_blank" rel="noopener">Comunidad de Madrid</a></li>
-        <li>Mortalidad atribuible al calor, verano de 2026, sistema MoMo. <a href="https://vivirediciones.es/?p=1135401" target="_blank" rel="noopener">Vivir Ediciones</a> · <a href="https://es.euronews.com/2026/08/31/el-calor-deja-mas-de-5200-muertes-estimadas-en-espana-en-2026-un-maximo-desde-2015" target="_blank" rel="noopener">Euronews</a></li>
-        <li>Proyección de hogares 2026-2041 del INE. <a href="https://www.eldiario.es/cantabria/93-000-personas-viviran-solas-cantabria-quince-anos-20-ahora_1_13312220.html" target="_blank" rel="noopener">elDiario.es</a></li>
+        <li>Mortalidad atribuible al calor, verano de 2026, sistema MoMo del Instituto de Salud Carlos III: más de 5.200 muertes estimadas a 31 de agosto. <a href="https://es.euronews.com/2026/08/31/el-calor-deja-mas-de-5200-muertes-estimadas-en-espana-en-2026-un-maximo-desde-2015" target="_blank" rel="noopener">Euronews</a></li>
         <li>La casa como lugar donde más accidentes sufren los mayores. <a href="https://www.zaragoza.es/sede/servicio/noticia/228063" target="_blank" rel="noopener">Ayuntamiento de Zaragoza</a></li>
         <li>Programa d'adaptació funcional de la llar, Ajuntament de Barcelona. <a href="https://ajuntament.barcelona.cat/personesgrans/ca/programa-dadaptacio-funcional-de-la-llar-persones-grans" target="_blank" rel="noopener">Ajuntament de Barcelona</a></li>
       </ol>
@@ -391,10 +393,10 @@
 
 <div class="mobile-cta" aria-label="Acciones rápidas">
   <a class="btn btn-accent" href="#test">Haz el test</a>
-  <a class="btn btn-ghost" href="#reserva">Reservar</a>
+  <a class="btn btn-ghost" href="#reserva">Reservar la visita</a>
 </div>
 <a class="wa-float" data-wa-float hidden target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 2C8.3 2 2 8.26 2 15.98c0 2.82.83 5.44 2.26 7.64L2 30l6.57-2.17A13.9 13.9 0 0 0 16.04 30C23.78 30 30 23.74 30 16.02 30 8.26 23.78 2 16.04 2zm0 25.4c-2.2 0-4.26-.6-6.04-1.7l-.43-.26-3.9 1.29 1.3-3.8-.28-.45a11.4 11.4 0 0 1-1.78-6.1c0-6.3 5.13-11.4 11.44-11.4 6.3 0 11.42 5.1 11.42 11.4 0 6.3-5.12 11.42-11.73 11.42zm6.27-8.55c-.34-.17-2.03-1-2.34-1.12-.31-.11-.54-.17-.77.17-.23.34-.88 1.12-1.08 1.35-.2.23-.4.26-.74.09-.34-.17-1.45-.53-2.76-1.7-1.02-.91-1.71-2.03-1.91-2.37-.2-.34-.02-.53.15-.7.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.77-1.86-1.06-2.54-.28-.67-.56-.58-.77-.59h-.66c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86s1.23 3.32 1.4 3.55c.17.23 2.42 3.7 5.86 5.18.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.13.66-.1 2.03-.83 2.32-1.63.29-.8.29-1.49.2-1.63-.09-.14-.31-.23-.65-.4z"/></svg></a>
 
-<script src="app.js?v=20261022" defer></script>
+<script src="app.js?v=20261022c" defer></script>
 </body>
 </html>

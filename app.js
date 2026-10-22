@@ -25,11 +25,6 @@ const ROOMS_ES = {
   dormitorio: {
     scene: 'Agosto: 31 ºC en su dormitorio a las dos de la madrugada. Y pastillas sueltas en la mesilla.',
     name: 'Dormitorio', tag: 'Calor · Medicación',
-    risks: [
-      'En verano la habitación pasa de 30 ºC por la noche y nadie lo nota.',
-      'Se levanta de la cama con prisa o mareado.',
-      'Pastillas sueltas en la mesilla: dosis olvidadas o repetidas.'
-    ],
     fixes: [
       'Termómetro a la vista y un plan para las olas de calor',
       'Lámina o cortina térmica que frena el sol',
@@ -40,11 +35,6 @@ const ROOMS_ES = {
   pasillo: {
     scene: 'Se levanta tres veces por la noche y el pasillo está a oscuras.',
     name: 'Pasillo', tag: 'Caídas',
-    risks: [
-      'El camino al baño, de noche y a oscuras.',
-      'Alfombras sueltas y cables por el suelo.',
-      'Muebles que estrechan el paso.'
-    ],
     fixes: [
       'Luces con sensor de movimiento del dormitorio al baño',
       'Alfombras fijadas o retiradas',
@@ -54,11 +44,6 @@ const ROOMS_ES = {
   bano: {
     scene: 'La bañera alta, el suelo mojado y nada firme a lo que agarrarse.',
     name: 'Baño', tag: 'Caídas',
-    risks: [
-      'Suelo mojado y bañera alta: uno de los sitios con más caídas.',
-      'Nada firme a lo que agarrarse al sentarse o levantarse.',
-      'El agua de la ducha sale demasiado caliente.'
-    ],
     fixes: [
       'Asideros junto al inodoro y en la ducha',
       'Antideslizante dentro y fuera de la ducha',
@@ -69,11 +54,6 @@ const ROOMS_ES = {
   salon: {
     scene: '«Abuela, soy yo. He cambiado de número y necesito dinero».',
     name: 'Salón', tag: 'Estafas',
-    risks: [
-      'Llamadas del falso nieto con el móvil roto, o del falso banco pidiendo claves.',
-      'Mensajes con enlaces para desbloquear una cuenta.',
-      'Sillones muy bajos y alfombras grandes.'
-    ],
     fixes: [
       'Palabra clave familiar para comprobar cualquier llamada',
       'Teléfonos de confianza guardados con nombre y a la vista',
@@ -84,11 +64,6 @@ const ROOMS_ES = {
   cocina: {
     scene: '¿El detector de humo? Nunca se llegó a poner.',
     name: 'Cocina', tag: 'Incendios',
-    risks: [
-      'El fuego encendido y olvidado.',
-      'Regletas sobrecargadas y enchufes viejos.',
-      'Lo de uso diario guardado demasiado alto.'
-    ],
     fixes: [
       'Detector de humo instalado y probado',
       'Revisión de enchufes y regletas',
@@ -98,11 +73,6 @@ const ROOMS_ES = {
   entrada: {
     scene: 'Un felpudo que se mueve, poca luz al llegar y nadie más que pueda entrar si pasa algo.',
     name: 'Entrada', tag: 'Caídas',
-    risks: [
-      'Un escalón o un felpudo en el que se tropieza.',
-      'Poca luz al llegar a casa.',
-      'Si pasa algo, nadie más puede entrar.'
-    ],
     fixes: [
       'Luz en la entrada',
       'Felpudo antideslizante, o fuera',
@@ -115,11 +85,6 @@ const ROOMS_CA = {
   dormitorio: {
     scene: 'Agost: 31 ºC al seu dormitori a les dues de la matinada. I pastilles soltes a la tauleta.',
     name: 'Dormitori', tag: 'Calor · Medicació',
-    risks: [
-      'A l’estiu l’habitació passa dels 30 ºC a la nit i ningú se n’adona.',
-      'S’aixeca del llit amb pressa o marejat.',
-      'Pastilles soltes a la tauleta: dosis oblidades o repetides.'
-    ],
     fixes: [
       'Termòmetre a la vista i un pla per a les onades de calor',
       'Làmina o cortina tèrmica que frena el sol',
@@ -130,11 +95,6 @@ const ROOMS_CA = {
   pasillo: {
     scene: 'S’aixeca tres cops a la nit i el passadís és a les fosques.',
     name: 'Passadís', tag: 'Caigudes',
-    risks: [
-      'El camí al bany, de nit i a les fosques.',
-      'Catifes soltes i cables per terra.',
-      'Mobles que estrenyen el pas.'
-    ],
     fixes: [
       'Llums amb sensor de moviment del dormitori al bany',
       'Catifes fixades o retirades',
@@ -144,11 +104,6 @@ const ROOMS_CA = {
   bano: {
     scene: 'La banyera alta, el terra mullat i res de ferm on agafar-se.',
     name: 'Bany', tag: 'Caigudes',
-    risks: [
-      'Terra mullat i banyera alta: un dels llocs amb més caigudes.',
-      'Res de ferm on agafar-se en seure o aixecar-se.',
-      'L’aigua de la dutxa surt massa calenta.'
-    ],
     fixes: [
       'Agafadors al costat del vàter i a la dutxa',
       'Antilliscant dins i fora de la dutxa',
@@ -159,11 +114,6 @@ const ROOMS_CA = {
   salon: {
     scene: '«Àvia, soc jo. He canviat de número i necessito diners».',
     name: 'Menjador', tag: 'Estafes',
-    risks: [
-      'Trucades del fals net amb el mòbil trencat, o del fals banc demanant claus.',
-      'Missatges amb enllaços per desbloquejar un compte.',
-      'Butaques molt baixes i catifes grans.'
-    ],
     fixes: [
       'Paraula clau familiar per comprovar qualsevol trucada',
       'Telèfons de confiança desats amb nom i a la vista',
@@ -174,11 +124,6 @@ const ROOMS_CA = {
   cocina: {
     scene: 'El detector de fum? Mai es va arribar a posar.',
     name: 'Cuina', tag: 'Incendis',
-    risks: [
-      'El foc encès i oblidat.',
-      'Regletes sobrecarregades i endolls vells.',
-      'El d’ús diari desat massa amunt.'
-    ],
     fixes: [
       'Detector de fum instal·lat i provat',
       'Revisió d’endolls i regletes',
@@ -188,11 +133,6 @@ const ROOMS_CA = {
   entrada: {
     scene: 'Una estora que es mou, poca llum en arribar i ningú més que pugui entrar si passa res.',
     name: 'Entrada', tag: 'Caigudes',
-    risks: [
-      'Un esglaó o una estora amb què s’entrebanca.',
-      'Poca llum en arribar a casa.',
-      'Si passa alguna cosa, ningú més pot entrar.'
-    ],
     fixes: [
       'Llum a l’entrada',
       'Estora antilliscant, o fora',
@@ -209,7 +149,7 @@ const QUESTIONS = [
   { id: 'q10', q: '¿Tiene miedo a caerse, o ha dejado de hacer cosas por ese miedo?', qCa: 'Té por de caure, o ha deixat de fer coses per aquesta por?', w: 2, fix: 'Apoyos donde le dan miedo las caídas y un plan para recuperar confianza', fixCa: 'Suports on li fan por les caigudes i un pla per recuperar confiança' },
   { id: 'q3', q: '¿Se ducha en bañera, o sin asideros donde apoyarse?', qCa: 'Es dutxa a la banyera, o sense agafadors on recolzar-se?', w: 2, fix: 'Asideros y antideslizante en el baño', fixCa: 'Agafadors i antilliscant al bany' },
   { id: 'q4', q: '¿Se levanta de noche y el camino al baño queda a oscuras?', qCa: 'S’aixeca de nit i el camí al bany queda a les fosques?', w: 2, fix: 'Luces con sensor del dormitorio al baño', fixCa: 'Llums amb sensor del dormitori al bany' },
-  { id: 'q5', q: '¿No hay detector de humo, o no sabéis si funciona?', qCa: 'No hi ha detector de fum, o no sabeu si funciona?', w: 2, fix: 'Detector de humo instalado y probado', fixCa: 'Detector de fum instal·lat i provat' },
+  { id: 'q5', q: '¿Les falta detector de humo, o no sabéis si funciona?', qCa: 'Els falta detector de fum, o no sabeu si funciona?', w: 2, fix: 'Detector de humo instalado y probado', fixCa: 'Detector de fum instal·lat i provat' },
   { id: 'q6', q: '¿En verano su dormitorio pasa mucho calor y no tiene aire acondicionado?', qCa: 'A l’estiu el seu dormitori passa molta calor i no té aire condicionat?', w: 2, fix: 'Una habitación preparada para las olas de calor', fixCa: 'Una habitació preparada per a les onades de calor' },
   { id: 'q7', q: '¿Toma cinco o más medicamentos al día?', qCa: 'Pren cinc o més medicaments al dia?', w: 2, fix: 'Pastillero semanal y lista de medicación al día', fixCa: 'Pastiller setmanal i llista de medicació al dia' },
   { id: 'q8', q: '¿Ha recibido llamadas o mensajes sospechosos pidiendo dinero o datos?', qCa: 'Ha rebut trucades o missatges sospitosos demanant diners o dades?', w: 1, fix: 'Móvil protegido y palabra clave familiar', fixCa: 'Mòbil protegit i paraula clau familiar' }
@@ -224,8 +164,8 @@ const TXT_ES = {
     alto: 'Hay varios puntos que conviene arreglar ya. La buena noticia: casi todos se resuelven en una sola visita.'
   },
   routeHigh: 'Riesgo de caída alto. En personas que ya se han caído o se sienten inestables, adaptar la casa con una terapeuta ocupacional reduce las caídas un 38 %. La visita empieza por ahí.',
-  routeLow: 'Riesgo de caída no destacado. Revisaríamos sobre todo incendios, calor y estafas, y mediríamos la marcha en la visita por si acaso.',
-  share: (level, pct, fixes, url) => `He hecho el test de Allgood (la ITV de la casa de tus padres): riesgo ${level}, ${pct} %.` + (fixes.length ? ` Lo primero que revisarían: ${fixes.slice(0, 3).join('; ')}.` : '') + ` Hazlo tú también: ${url}`,
+  routeLow: 'Sin señales de riesgo de caída. Miraríamos sobre todo incendios, calor y estafas, y mediríamos la marcha en la visita.',
+  share: (level, fixes, url) => `He hecho el test de Allgood sobre la casa de papá y mamá: riesgo ${level}.` + (fixes.length ? ` Lo primero que revisarían: ${fixes.slice(0, 3).join('; ')}.` : '') + ` Hazlo tú: ${url}`,
   sibs: (precio, parte, url) => `He visto esto para la casa de papá y mamá: la ITV de la casa. Una terapeuta ocupacional y un técnico de adaptaciones la revisan y resuelven lo pequeño en una mañana, y nos envían el informe a todos.${precio > 0 ? ` Son ${precio} €; entre tres, ${parte(3)} € cada uno.` : ''} ¿Lo pagamos entre todos? ${url}`,
   split: (p) => `Entre hermanos: ${p(2)} € cada uno si sois dos, ${p(3)} € si sois tres, ${p(4)} € si sois cuatro.`,
   needNamePhone: 'Necesitamos tu nombre y un teléfono para poder llamarte.',
@@ -234,7 +174,8 @@ const TXT_ES = {
   openedWhatsapp: 'Se abre WhatsApp con tu mensaje preparado. Envíalo y te contestamos.',
   openedMail: 'Se abre tu correo con el mensaje preparado. Envíalo y te contestamos.',
   mailSubject: 'Reserva · Allgood',
-  missingConfig: 'Falta el contacto: rellena whatsapp o email en CONFIG (app.js).',
+  missingConfig: 'Todavía no podemos recibir reservas desde aquí. Vuelve en unos días o escríbenos cuando veas el teléfono publicado.',
+  submitWhatsapp: 'Reservar por WhatsApp', submitMail: 'Reservar por correo',
   waFloat: 'Hola, quiero información sobre la revisión de la casa de mis padres.'
 };
 
@@ -247,8 +188,8 @@ const TXT_CA = {
     alto: 'Hi ha diversos punts que convé arreglar ja. La bona notícia: gairebé tots es resolen en una sola visita.'
   },
   routeHigh: 'Risc de caiguda alt. En persones que ja han caigut o se senten inestables, adaptar la casa amb una terapeuta ocupacional redueix les caigudes un 38 %. La visita comença per aquí.',
-  routeLow: 'Risc de caiguda no destacat. Revisaríem sobretot incendis, calor i estafes, i mesuraríem la marxa a la visita per si de cas.',
-  share: (level, pct, fixes, url) => `He fet el test d’Allgood (la ITV de la casa dels teus pares): risc ${level}, ${pct} %.` + (fixes.length ? ` El primer que revisarien: ${fixes.slice(0, 3).join('; ')}.` : '') + ` Fes-lo tu també: ${url}`,
+  routeLow: 'Sense senyals de risc de caiguda. Miraríem sobretot incendis, calor i estafes, i mesuraríem la marxa a la visita.',
+  share: (level, fixes, url) => `He fet el test d’Allgood sobre la casa del pare i la mare: risc ${level}.` + (fixes.length ? ` El primer que revisarien: ${fixes.slice(0, 3).join('; ')}.` : '') + ` Fes-lo tu: ${url}`,
   sibs: (precio, parte, url) => `He vist això per a la casa del pare i la mare: la ITV de la casa. Una terapeuta ocupacional i un tècnic d’adaptacions la revisen i resolen el que és petit en un matí, i ens envien l’informe a tots.${precio > 0 ? ` Són ${precio} €; entre tres, ${parte(3)} € cadascú.` : ''} Ho paguem entre tots? ${url}`,
   split: (p) => `Entre germans: ${p(2)} € cadascú si sou dos, ${p(3)} € si sou tres, ${p(4)} € si sou quatre.`,
   needNamePhone: 'Necessitem el teu nom i un telèfon per poder trucar-te.',
@@ -257,7 +198,8 @@ const TXT_CA = {
   openedWhatsapp: 'S’obre WhatsApp amb el teu missatge preparat. Envia’l i et contestem.',
   openedMail: 'S’obre el teu correu amb el missatge preparat. Envia’l i et contestem.',
   mailSubject: 'Reserva · Allgood',
-  missingConfig: 'Falta el contacte: omple whatsapp o email a CONFIG (app.js).',
+  missingConfig: 'Encara no podem rebre reserves des d’aquí. Torna d’aquí a uns dies o escriu-nos quan vegis el telèfon publicat.',
+  submitWhatsapp: 'Reservar per WhatsApp', submitMail: 'Reservar per correu',
   waFloat: 'Hola, vull informació sobre la revisió de la casa dels meus pares.'
 };
 
@@ -271,7 +213,7 @@ const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const isNarrow = () => window.matchMedia('(max-width: 899px)').matches;
 const escapeHtml = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const scrollTo = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block });
+const scrollIntoViewSafe = (el, block = 'start') => el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block });
 const pageUrl = () => location.href.split('#')[0];
 
 /* ---------- 5. MENÚ MÓVIL ---------- */
@@ -286,7 +228,7 @@ const pageUrl = () => location.href.split('#')[0];
   };
   toggle.addEventListener('click', () => set(!nav.classList.contains('open')));
   nav.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && nav.classList.contains('open')) { set(false); toggle.focus(); } });
 })();
 
 /* ---------- 6. APARICIÓN AL HACER SCROLL ---------- */
@@ -372,6 +314,7 @@ const pageUrl = () => location.href.split('#')[0];
       b.setAttribute('aria-selected', String(sel));
       b.tabIndex = sel ? 0 : -1;
     });
+    panel.setAttribute('aria-labelledby', 'tab-' + id);
     if (reduceMotion) { paint(room); return; }
     clearTimeout(timer);
     body.classList.add('is-switching');
@@ -381,11 +324,16 @@ const pageUrl = () => location.href.split('#')[0];
   const backdrop = $('.sheet-backdrop');
   const openSheet = () => {
     if (!isNarrow()) return;
+    if (backdrop) { backdrop.hidden = false; void backdrop.offsetWidth; backdrop.classList.add('show'); }
     panel.classList.add('open');
-    if (backdrop) { backdrop.hidden = false; requestAnimationFrame(() => backdrop.classList.add('show')); }
+    panel.tabIndex = -1;
+    void panel.offsetWidth;
+    const c = $('.sheet-close', panel);
+    if (c) c.focus({ preventScroll: true });
     document.body.classList.add('sheet-open');
   };
   const closeSheet = () => {
+    if (panel.contains(document.activeElement)) { const b = buttons.find((x) => x.dataset.room === current); if (b) b.focus(); }
     panel.classList.remove('open');
     if (backdrop) { backdrop.classList.remove('show'); setTimeout(() => { backdrop.hidden = true; }, 400); }
     document.body.classList.remove('sheet-open');
@@ -400,6 +348,8 @@ const pageUrl = () => location.href.split('#')[0];
   }));
 
   plan.addEventListener('keydown', (e) => {
+    if (e.key === 'Home') { e.preventDefault(); render(buttons[0].dataset.room); buttons[0].focus(); return; }
+    if (e.key === 'End') { e.preventDefault(); const l = buttons[buttons.length - 1]; render(l.dataset.room); l.focus(); return; }
     const forward = e.key === 'ArrowRight' || e.key === 'ArrowDown';
     const back = e.key === 'ArrowLeft' || e.key === 'ArrowUp';
     if (!forward && !back) return;
@@ -422,7 +372,7 @@ const pageUrl = () => location.href.split('#')[0];
   const el = {
     index: $('[data-quiz-index]', root), bar: $('[data-quiz-bar]', root), q: $('[data-quiz-q]', root),
     back: $('[data-quiz-back]', root), buttons: $$('[data-quiz-answer]', root),
-    level: $('[data-level]', result), score: $('[data-score]', result), pct: $('[data-pct]', result),
+    level: $('[data-level]', result), score: $('[data-score]', result),
     text: $('[data-level-text]', result), route: $('[data-route]', result),
     fixesWrap: $('[data-fixes-wrap]', result), fixes: $('[data-fixes]', result),
     share: $('[data-share]', result), reset: $('[data-quiz-reset]', result)
@@ -443,7 +393,7 @@ const pageUrl = () => location.href.split('#')[0];
     el.q.style.animation = '';
     el.q.textContent = CA ? q.qCa : q.q;
     el.back.hidden = i === 0;
-    el.buttons.forEach((b) => b.classList.toggle('is-pressed', answers[q.id] === b.dataset.quizAnswer));
+    el.buttons.forEach((b) => { const on = answers[q.id] === b.dataset.quizAnswer; b.classList.toggle('is-pressed', on); b.setAttribute('aria-pressed', String(on)); });
   };
 
   const finish = () => {
@@ -451,27 +401,32 @@ const pageUrl = () => location.href.split('#')[0];
     const fixes = [];
     QUESTIONS.forEach((q) => { if (answers[q.id] === 'si') { score += q.w; fixes.push(fixOf(q)); } });
     const pct = Math.round((score / totalW) * 100);
-    const level = pct >= 55 ? 'alto' : pct >= 25 ? 'medio' : 'bajo';
+    // Enrutar, no rechazar: la promesa de menos caídas solo donde la evidencia la sostiene.
+    const fallRisk = ['q2', 'q9', 'q10'].some((id) => answers[id] === 'si');
+    let level = pct >= 55 ? 'alto' : pct >= 25 ? 'medio' : 'bajo';
+    if (fallRisk && level === 'bajo') level = 'medio';
     root.dataset.level = level;
     el.level.textContent = TXT.levelName[level];
     el.score.style.width = Math.max(pct, 4) + '%';
-    el.pct.textContent = pct + ' %';
     el.text.textContent = TXT.levelText[level];
-    // Enrutar, no rechazar: la promesa de menos caídas solo donde la evidencia la sostiene.
-    const fallRisk = ['q2', 'q9', 'q10'].some((id) => answers[id] === 'si');
     el.route.textContent = fallRisk ? TXT.routeHigh : TXT.routeLow;
     el.fixesWrap.hidden = fixes.length === 0;
     el.fixes.innerHTML = fixes.map((t) => `<li>${escapeHtml(t)}</li>`).join('');
-    el.share.href = 'https://wa.me/?text=' + encodeURIComponent(TXT.share(TXT.levelName[level], pct, fixes, pageUrl() + '#test'));
+    el.share.href = 'https://wa.me/?text=' + encodeURIComponent(TXT.share(TXT.levelName[level], fixes, pageUrl() + '#test'));
     card.hidden = true;
     result.hidden = false;
-    if (isNarrow()) scrollTo(root, 'start');
+    if (isNarrow()) scrollIntoViewSafe(root, 'start');
+    result.focus({ preventScroll: !isNarrow() });
   };
 
+  let busy = false;
   el.buttons.forEach((b) => b.addEventListener('click', () => {
+    if (busy) return;
+    busy = true;
     answers[QUESTIONS[i].id] = b.dataset.quizAnswer;
     b.classList.add('is-pressed');
     setTimeout(() => {
+      busy = false;
       if (i === total - 1) finish(); else show(i + 1);
     }, reduceMotion ? 0 : 180);
   }));
@@ -484,7 +439,9 @@ const pageUrl = () => location.href.split('#')[0];
     show(0);
   });
   document.addEventListener('keydown', (e) => {
-    if (card.hidden || !root.matches(':hover') && !root.contains(document.activeElement)) return;
+    if (card.hidden || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.target.closest('input,textarea,select,[contenteditable]')) return;
+    if (!root.contains(document.activeElement)) return;
     const k = e.key.toLowerCase();
     if (k === 's') el.buttons[0].click();
     if (k === 'n') el.buttons[1].click();
@@ -546,6 +503,9 @@ const pageUrl = () => location.href.split('#')[0];
   if (!form) return;
   const note = $('[data-form-note]', form);
   const defaultNote = note.textContent;
+  const submit = $('[data-submit]', form);
+  if (submit) submit.textContent = CONFIG.whatsapp ? TXT.submitWhatsapp : CONFIG.email ? TXT.submitMail : submit.textContent;
+  if (!CONFIG.whatsapp && !CONFIG.email) console.warn('Allgood: CONFIG sin whatsapp ni email; el formulario no puede enviar reservas.');
   const say = (text, cls) => {
     note.textContent = text;
     note.classList.remove('is-error', 'is-ok');
@@ -560,8 +520,8 @@ const pageUrl = () => location.href.split('#')[0];
     const nota = form.nota.value.trim();
     const interes = form.interes ? form.interes.value : '';
 
-    form.nombre.classList.toggle('is-invalid', !nombre);
-    form.telefono.classList.toggle('is-invalid', !telefono);
+    form.nombre.classList.toggle('is-invalid', !nombre); form.nombre.setAttribute('aria-invalid', String(!nombre));
+    form.telefono.classList.toggle('is-invalid', !telefono); form.telefono.setAttribute('aria-invalid', String(!telefono));
     if (!nombre || !telefono) {
       say(TXT.needNamePhone, 'is-error');
       (nombre ? form.telefono : form.nombre).focus();
@@ -613,14 +573,19 @@ const pageUrl = () => location.href.split('#')[0];
   if (!stage) return;
   if (reduceMotion) { stage.style.setProperty('--p', '1'); return; }
   let ticking = false;
+  let last = '';
   const update = () => {
     ticking = false;
+    const top = parseFloat(getComputedStyle(stage.firstElementChild).top) || 0;
     const rect = stage.getBoundingClientRect();
-    const travel = stage.offsetHeight - window.innerHeight;
-    const p = travel > 0 ? Math.min(1, Math.max(0, -rect.top / travel)) : 1;
+    const travel = stage.offsetHeight - window.innerHeight + top;
+    const p = travel > 0 ? Math.min(1, Math.max(0, (top - rect.top) / travel)) : 1;
     // Ligera curva para que la casa se encienda con decisión en la segunda mitad del recorrido.
     const eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
-    stage.style.setProperty('--p', eased.toFixed(3));
+    const v = eased.toFixed(3);
+    if (v === last) return;
+    last = v;
+    stage.style.setProperty('--p', v);
   };
   const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -644,4 +609,25 @@ const pageUrl = () => location.href.split('#')[0];
   }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
   ids.forEach((id) => { const sec = document.getElementById(id); if (sec) io.observe(sec); });
   mark(ids[0]);
+})();
+
+/* ---------- 15. DETALLES QUE SE ABREN AL ENLAZARLOS ---------- */
+(function openDetailsTargets() {
+  const open = (id) => { const el = id && document.getElementById(id); if (el && el.tagName === 'DETAILS') el.open = true; };
+  open(location.hash.slice(1));
+  window.addEventListener('hashchange', () => open(location.hash.slice(1)));
+  $$('a[href^="#"]').forEach((a) => a.addEventListener('click', () => open(a.getAttribute('href').slice(1))));
+})();
+
+/* ---------- 16. BARRA MÓVIL FUERA DE LA RESERVA; ANIMACIONES SOLO A LA VISTA ---------- */
+(function cta() {
+  const bar = $('.mobile-cta');
+  const sec = $('#reserva');
+  if (!bar || !sec || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(([en]) => { bar.hidden = en.isIntersecting; }, { threshold: 0.15 }).observe(sec);
+})();
+(function visibleOnly() {
+  if (!('IntersectionObserver' in window)) return;
+  const vis = new IntersectionObserver((es) => es.forEach((en) => en.target.classList.toggle('is-visible', en.isIntersecting)));
+  [$('.stage'), $('#casa')].forEach((el) => el && vis.observe(el));
 })();
